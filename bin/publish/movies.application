@@ -8,7 +8,7 @@
         <beforeApplicationStartup />
       </update>
     </subscription>
-    <deploymentProvider codebase="https://raw.githubusercontent.com/stuartfischli/Movies/master/movies.application" />
+    <deploymentProvider codebase="https://raw.githubusercontent.com/stuartfischli/Movies/master/bin/publish/movies.application" />
   </deployment>
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
