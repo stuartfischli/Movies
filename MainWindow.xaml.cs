@@ -177,17 +177,17 @@ namespace WpfApp1
                 if (Global.proceed == 1)
                 {
                     noResultsLabel.Content = "No results.";
-
+                    Canvas.SetZIndex(noResultsLabel, 3);
                 }
                 else
                 {
+                    noResultsLabel.Visibility = Visibility.Hidden;
                     MainFrame.Navigate(new Uri("searchResultsPage1.xaml", UriKind.Relative));
 
 
                     Canvas.SetZIndex(searchBorder, 0);
                 }
-                //searchBar.Margin = new Thickness(0, 100, 0, 0);
-                //searchBorder.Margin = new Thickness(0, 100, 0, 0);
+                
             }
         }
     }
