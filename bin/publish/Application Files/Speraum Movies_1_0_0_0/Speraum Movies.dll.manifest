@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Speraum Movies.exe" version="1.0.0.0" publicKeyToken="68cfa4b62f3086a6" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Launcher" version="5.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Launcher.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Launcher.exe" size="15328">
+      <assemblyIdentity name="Launcher" version="5.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>SD6v+LKYh0PAbGhwnr4M36rCo5xU/nddkCScwqEXeXk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="HtmlAgilityPack.dll" size="163840">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>r+uKTOIYhkIOhMEphGMUjucjjrn5w51+glCGs1DIOMg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Speraum Movies.deps.json" size="1057">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>GiLRuqKJWdMi9nFIqUPHJFgGMb3laoqIRvWp1FvxtwI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Speraum Movies.dll" size="1482720">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>mp/hoNvRc/PuBLYOqBO1oPNP3rNmHRVqTaYP784t0MU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Speraum Movies.exe" size="148960">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>fMCSg/dSDk/A222Q5xUw9N6yuFzsuPRAVnT7ISBK5yQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Speraum Movies.runtimeconfig.json" size="372">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>HsoPDHAHCqg7tgnkt0mybctECXhDJgMnJjlHIiJKCYo=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=CCIMAIL\stuartfischli" issuerKeyHash="3d48b6f49ef4f0dd0b98f68c492f47911e9614f4" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>HLxfzEu55w9esvDqpD0feqcfL2gMclNm4KwmBc+7EQ0=</DigestValue></Reference></SignedInfo><SignatureValue>sZcJHsGEDeBtefTGoRo8k1Tq7h4l0g8zrkGjKGyPyoESQZU3A0J6AYkUusRPo26Z9YN8YnGquagbsXUZ03NQTemGFtN+icu+jzZpvuyAt+Vb0I7VWiwBZAi+eQQR4saz2XZfpv12G1xtJEiHAGF339yzFuwsFm88rkeSeL3RWHg=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>1tMFufw6t528XJBBzWLOCE2jO1VBvNVM+gKYygwbLA7pwGcXuNF1MYUFyFovADdR05g4ObcYKe372qIwhj5ElTlggxbiF90Ga7HEE7Hf+G4msc0qncUV7sNijnJzXYG5FO2YSRZshvxDs6OZhDhD71NiUod9bdzyr554Ec1tJPk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="0d11bbcf0526ace06653720c682f1fa77a1f3da4eaf0b25e0fe7b94bcc5fbc1c" Description="" Url=""><as:assemblyIdentity name="Speraum Movies.exe" version="1.0.0.0" publicKeyToken="68cfa4b62f3086a6" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=CCIMAIL\stuartfischli</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>ZJgmiJZYhUzXzMDAonI5hl68+CUDiDrVpT0AuGz35L0=</DigestValue></Reference></SignedInfo><SignatureValue>r8EFR/Xieulom17HEW7Z2VxOdtkEPrApIPQFPITYlxyCMacU4U5J8MNzMyXfNiE/4IRLAfmifRuT3a6MlbBzW1zxi7rvRosovcOUYN9E1jRlvaABeMrQKr8CreunmMp0SR8IkOKXsW1UNGR4w5MwpKIYOMrEN4eKdCV73pSP4oA=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>1tMFufw6t528XJBBzWLOCE2jO1VBvNVM+gKYygwbLA7pwGcXuNF1MYUFyFovADdR05g4ObcYKe372qIwhj5ElTlggxbiF90Ga7HEE7Hf+G4msc0qncUV7sNijnJzXYG5FO2YSRZshvxDs6OZhDhD71NiUod9bdzyr554Ec1tJPk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQVe2fFJlVXoxLeGS2fsO/2DANBgkqhkiG9w0BAQsFADA1MTMwMQYDVQQDHioAQwBDAEkATQBBAEkATABcAHMAdAB1AGEAcgB0AGYAaQBzAGMAaABsAGkwHhcNMjMwMjA3MjIyODIxWhcNMjQwMjA4MDQyODIxWjA1MTMwMQYDVQQDHioAQwBDAEkATQBBAEkATABcAHMAdAB1AGEAcgB0AGYAaQBzAGMAaABsAGkwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBANbTBbn8OredvFyQQc1izghNoztVQbzVTPoCmMoMGywO6cBnF7jRdTGFBchaLwA3UdOYODm3GCnt+9qiMIY+RJU5YIMW4hfdBmuxxBOx3/huJrHNKp3FFe7DYo5yc12BuRTtmEkWbIb8Q7OjmYQ4Q+9TYlKHfW3c8q+eeBHNbST5AgMBAAEwDQYJKoZIhvcNAQELBQADgYEAuFcN0bNRzAFMeFYhGHBC3a8HXMqAA8iS3Nx7jlvie8yDnwJTl138MmrZC//b0wfXmh3m2S8xzEiAEHeMRmJOU+Tm596uAt6RYFuSzUqjHtOHUCJ+NAohPSdZLT+48jDkMahKG5fOOShNAXjU+1y7g+Gj+1EIIqx+zOdW4/PhVgE=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
