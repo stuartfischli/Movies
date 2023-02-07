@@ -25,14 +25,14 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        public static MainWindow AppWindow;
         public MainWindow()
         {
             WindowState = WindowState.Maximized;
             
 
             InitializeComponent();
-            
+            AppWindow = this;
                       
         }
 
@@ -160,7 +160,8 @@ namespace WpfApp1
                 movieList.Clear();
                 searchTerm = String.Empty;
                 proceed = 0;
-                
+                Canvas.SetZIndex(AppWindow.searchBar, 5);
+                Canvas.SetZIndex(AppWindow.searchBorder, 5);
             }
         }
 

@@ -102,6 +102,7 @@ namespace movies
         {
             this.Visibility = Visibility.Hidden;
             MainWindow.Global.ClearData();
+            
         }
 
         private void image1_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
