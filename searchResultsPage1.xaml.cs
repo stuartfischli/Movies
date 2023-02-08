@@ -28,6 +28,7 @@ namespace movies
         {
             InitializeComponent();
 
+            
             try
             {
                 int k = 0;
@@ -85,6 +86,7 @@ namespace movies
             }
         }
 
+        
         private void nextLabel_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             if (MainWindow.Global.movieList.Count <= 10)
@@ -112,8 +114,18 @@ namespace movies
             windowToHide.Hide();
             Window windowToNavigate = new movieWindow();
             windowToNavigate.Show();
-            
+            MainWindow.Global.movieNumber = 1;
 
+        }
+
+        private void image2_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            this.Visibility = Visibility.Hidden;
+            Window windowToHide = new MainWindow();
+            windowToHide.Hide();
+            Window windowToNavigate = new movieWindow();
+            windowToNavigate.Show();
+            MainWindow.Global.movieNumber = 2;
         }
     }
 

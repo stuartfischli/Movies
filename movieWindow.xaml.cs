@@ -28,9 +28,25 @@ namespace movies
             DataContext = this;
             InitializeComponent();
             createPlayer();
+            createTitleBlock();
+            this.Title = MainWindow.Global.titles[0][0].ToString();
             
         }
 
+        public void createTitleBlock()
+        {
+            try
+            {
+                titleLabel.Text = MainWindow.Global.titles[MainWindow.Global.movieNumber].ToString();
+                coverImage.Source = MainWindow.Global.images[MainWindow.Global.movieNumber];
+                metadataBlock.Text = MainWindow.Global.descriptions[MainWindow.Global.movieNumber].ToString();
+            }
+            catch
+            {
+
+            }
+            
+        }
         
         public class Global
         {
@@ -42,13 +58,14 @@ namespace movies
             public static DispatcherTimer timer = new DispatcherTimer();
             public static TimeSpan TotalTime = new TimeSpan();
             public static double mbWidth = new double();
+            public static double mbHeight = new double();   
             public static int isFullscreen = 0;
         }
        
         
         public void createPlayer()
         {
-            Global.videoPlayer.Open(new Uri(@"C:\Users\stuartfischli\Videos\Captures\Halo Infinite 2022-06-21 16-52-03_Slomo.mp4", UriKind.RelativeOrAbsolute));//@"C:\Users\stuartfischli\OneDrive - UNSW\PXL_20210429_032802155.mp4" @"https://t.tarahipro.ir/1401/05/thor-web/Thor.Love.and.Thunder.2022.480p.WEB-DL.SoftSub.Filmsara.mkv"
+            Global.videoPlayer.Open(new Uri(@"C:\Users\stuartfischli\Videos\Captures\Halo Infinite 2022-06-21 16-52-03_Slomo.mp4", UriKind.Absolute));//@"C:\Users\stuartfischli\OneDrive - UNSW\PXL_20210429_032802155.mp4" @"https://t.tarahipro.ir/1401/05/thor-web/Thor.Love.and.Thunder.2022.480p.WEB-DL.SoftSub.Filmsara.mkv"
             Global.rect = new Rect(this.Width / 2, this.Height / 2, movieBorder.Width, movieBorder.Height);
             Global.videoDrawing.Rect = Global.rect;
             Global.videoDrawing.Player = Global.videoPlayer;
@@ -59,8 +76,8 @@ namespace movies
             Global.timer.Interval = TimeSpan.FromSeconds(.1);
             Global.timer.Tick += new EventHandler(ticktock);
             Global.videoPlayer.MediaOpened += new EventHandler(mediaOpened);
-            
-                                    
+            controlsGrid.Margin = new Thickness(0, 500 - 50, 0, 2);
+
         }
 
         void ticktock(object sender, EventArgs e)
@@ -83,30 +100,31 @@ namespace movies
             }
             
         }
-               
 
-        private void fullScreenButton_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        private void fullScreenButton_MouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
         {
             controlsGrid.Visibility = Visibility.Hidden;
+            titleGrid.Visibility = Visibility.Hidden;
 
             this.WindowStyle = WindowStyle.None;
-            //this.Background = Global.drawingBrush;
-            //movieGrid.Background = Global.drawingBrush;
-
+            
+            Global.mbHeight = (this.Width * Global.videoPlayer.NaturalVideoHeight) / Global.videoPlayer.NaturalVideoWidth;
             movieBorder.Stroke.Opacity = 0;
             Canvas.SetZIndex(playerGrid, 3);
             Canvas.SetZIndex(movieGrid, 0);
+            Canvas.SetZIndex(controlsGrid, 6);
+            Canvas.SetZIndex(controlsBorder, 6);
             movieBorder.Fill = Global.drawingBrush;
             playerGrid.Width = this.Width;
-            playerGrid.Height = (this.Width * Global.videoPlayer.NaturalVideoHeight) / Global.videoPlayer.NaturalVideoWidth;
+            playerGrid.Height = Global.mbHeight;
             movieBorder.Width = this.Width;
-            movieBorder.Height = (this.Width * Global.videoPlayer.NaturalVideoHeight) / Global.videoPlayer.NaturalVideoWidth;
-            controlsGrid.Width = movieBorder.Width;
-            slider.Width = controlsGrid.Width * .9;
-            movieBorder.VerticalAlignment = VerticalAlignment.Center;
+            movieBorder.Height = Global.mbHeight;
+            controlsGrid.Margin = new Thickness(0, Global.mbHeight - 51, 0, 2);
+            playerGrid.Margin = new Thickness(0, (Height - Global.mbHeight) / 2, 0, (Height - Global.mbHeight) / 2);
 
             Global.drawingBrush.Stretch = Stretch.Fill;
             Global.isFullscreen = 1;
+                        
         }
 
         private void playButton_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -124,11 +142,9 @@ namespace movies
             Global.mbWidth = (movieBorder.ActualHeight * Global.videoPlayer.NaturalVideoWidth) / Global.videoPlayer.NaturalVideoHeight;
             playerGrid.Width = Global.mbWidth;
             movieBorder.Width = Global.mbWidth;
-            controlsGrid.Width = movieBorder.Width;
             Canvas.SetZIndex(playerGrid, 1);
             Canvas.SetZIndex(movieGrid, 0);
             Canvas.SetZIndex(controlsGrid, 4);
-            controlsGrid.Margin = new Thickness(movieBorder.Margin.Left, movieBorder.Margin.Top + movieBorder.ActualHeight - controlsGrid.ActualHeight, movieBorder.Margin.Right, movieBorder.Margin.Bottom);
             
         }
         
@@ -140,17 +156,17 @@ namespace movies
                 movieBorder.Stroke.Opacity = 100;
                 movieBorder.Height = 500;
                 movieBorder.Width = Global.mbWidth;
-                movieBorder.HorizontalAlignment = HorizontalAlignment.Center;
-                movieBorder.VerticalAlignment = VerticalAlignment.Center;
                 Global.videoDrawing.Rect = new Rect(this.Width / 2, this.Height / 2, movieBorder.Width, movieBorder.Height);
                 movieGrid.Background = Brushes.Black;
                 movieBorder.Fill = Global.drawingBrush;
-                Canvas.SetZIndex(movieBorder, 3);
+                Canvas.SetZIndex(movieBorder, 4);
                 Canvas.SetZIndex(movieGrid, 0);
-                Canvas.SetZIndex(controlsGrid, 4);
-                controlsGrid.HorizontalAlignment= HorizontalAlignment.Center;
-                controlsGrid.Margin = new Thickness(movieBorder.Margin.Left, movieBorder.Margin.Top + movieBorder.ActualHeight - controlsGrid.ActualHeight, movieBorder.Margin.Right, movieBorder.Margin.Bottom);
+                Canvas.SetZIndex(controlsGrid, 7);
+                Canvas.SetZIndex(smallPlayButton, 8);
+                Canvas.SetZIndex(slider, 8);
+                Canvas.SetZIndex(fullScreenButton, 8);
                 Global.isFullscreen = 0;
+                controlsGrid.Margin = new Thickness(0, (ActualHeight/2) + 250 - 51, 0, 2);
             }
 
             else if (e.Key == Key.Space)
@@ -206,17 +222,27 @@ namespace movies
             if (Global.isFullscreen == 1)
             {
                 Canvas.SetZIndex(controlsGrid, 6);
+                Canvas.SetZIndex(controlsBorder, 10);
                 controlsGrid.Visibility = Visibility.Visible;
 
-                Task.Delay(2000).ContinueWith(_ =>
+                if (controlsGrid.IsMouseOver)
                 {
-                    this.Dispatcher.Invoke(() =>
+                    controlsBorder.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    Task.Delay(2000).ContinueWith(_ =>
                     {
-                        controlsGrid.Visibility = Visibility.Hidden;
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            controlsGrid.Visibility = Visibility.Hidden;
+                        });
                     });
-                });
+                }
 
             }
         }
+
+        
     }
 }

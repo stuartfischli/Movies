@@ -11,6 +11,7 @@
     <None Remove="fullScreenButton.png" />
     <None Remove="NdTLIY.jpg" />
     <None Remove="playButton.png" />
+    <None Remove="smallPlayButton.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +23,7 @@
     <Resource Include="fullScreenButton.png" />
     <Resource Include="NdTLIY.jpg" />
     <Resource Include="playButton.png" />
+    <Resource Include="smallPlayButton.png" />
   </ItemGroup>
 
 </Project>

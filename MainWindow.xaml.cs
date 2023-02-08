@@ -45,6 +45,7 @@ namespace WpfApp1
             public static List<Movie> movieList = new List<Movie>();
             public static string searchTerm = "";
             public static int proceed = new int();
+            public static int movieNumber = new int();
             
 
             public static void GetInfo(string query)
