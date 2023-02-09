@@ -109,9 +109,9 @@ namespace movies
 
         private void image1_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            this.Visibility= Visibility.Hidden;
-            Window windowToHide = new MainWindow();
-            windowToHide.Hide();
+            //this.Visibility= Visibility.Hidden;
+            //Window windowToHide = new MainWindow();
+            //windowToHide.Hide();
             Window windowToNavigate = new movieWindow();
             windowToNavigate.Show();
             MainWindow.Global.movieNumber = 1;
@@ -120,9 +120,9 @@ namespace movies
 
         private void image2_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            this.Visibility = Visibility.Hidden;
-            Window windowToHide = new MainWindow();
-            windowToHide.Hide();
+            //this.Visibility = Visibility.Hidden;
+            //Window windowToHide = new MainWindow();
+            //windowToHide.Hide();
             Window windowToNavigate = new movieWindow();
             windowToNavigate.Show();
             MainWindow.Global.movieNumber = 2;

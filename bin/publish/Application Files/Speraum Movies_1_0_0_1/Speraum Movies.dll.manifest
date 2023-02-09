@@ -71,13 +71,13 @@
       <dsig:DigestValue>D06cYkWLnrL9j3+u9fShc95O7lYfqGlo6GYHB5VJr9M=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Speraum Movies.dll" size="1481216">
+  <file name="Speraum Movies.dll" size="1545216">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>LKmYBbq1JQK6ES/22OKSePtz1xtMSoBnCmcm/JYfjzI=</dsig:DigestValue>
+      <dsig:DigestValue>MaPOZdwffsCy+GMFV2S2aUThLNA9uXPbjl80RIQK8+M=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Speraum Movies.exe" size="147456">

@@ -29,7 +29,7 @@ namespace movies
             InitializeComponent();
             createPlayer();
             createTitleBlock();
-            this.Title = MainWindow.Global.titles[0][0].ToString();
+            this.Title = MainWindow.Global.titles[0].ToString();
             
         }
 
@@ -38,8 +38,10 @@ namespace movies
             try
             {
                 titleLabel.Text = MainWindow.Global.titles[MainWindow.Global.movieNumber].ToString();
-                coverImage.Source = MainWindow.Global.images[MainWindow.Global.movieNumber];
+                ImageBrush tileBrush = new ImageBrush(MainWindow.Global.images[MainWindow.Global.movieNumber]);
+                coverImage.Background = tileBrush;
                 metadataBlock.Text = MainWindow.Global.descriptions[MainWindow.Global.movieNumber].ToString();
+                
             }
             catch
             {
@@ -100,14 +102,16 @@ namespace movies
             }
             
         }
-
-        private void fullScreenButton_MouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
+        void goFullscreen()
         {
             controlsGrid.Visibility = Visibility.Hidden;
             titleGrid.Visibility = Visibility.Hidden;
+            backLabel.Visibility = Visibility.Hidden;
+            homeImage.Visibility = Visibility.Hidden;
+            scrollViewer.IsEnabled = false;
 
             this.WindowStyle = WindowStyle.None;
-            
+
             Global.mbHeight = (this.Width * Global.videoPlayer.NaturalVideoHeight) / Global.videoPlayer.NaturalVideoWidth;
             movieBorder.Stroke.Opacity = 0;
             Canvas.SetZIndex(playerGrid, 3);
@@ -120,11 +124,17 @@ namespace movies
             movieBorder.Width = this.Width;
             movieBorder.Height = Global.mbHeight;
             controlsGrid.Margin = new Thickness(0, Global.mbHeight - 51, 0, 2);
-            playerGrid.Margin = new Thickness(0, (Height - Global.mbHeight) / 2, 0, (Height - Global.mbHeight) / 2);
+            playerGrid.VerticalAlignment = VerticalAlignment.Top;
+            playerGrid.Margin = new Thickness(0, (Height - Global.mbHeight), 0, 0);
+
 
             Global.drawingBrush.Stretch = Stretch.Fill;
             Global.isFullscreen = 1;
-                        
+        }
+
+        private void fullScreenButton_MouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
+        {
+            goFullscreen();                        
         }
 
         private void playButton_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -147,26 +157,38 @@ namespace movies
             Canvas.SetZIndex(controlsGrid, 4);
             
         }
+
+        void exitFullscreen()
+        {
+            this.WindowStyle = WindowStyle.SingleBorderWindow;
+            movieBorder.Stroke.Opacity = 100;
+            movieBorder.Height = 500;
+            movieBorder.Width = Global.mbWidth;
+            Global.videoDrawing.Rect = new Rect(this.Width / 2, this.Height / 2, movieBorder.Width, movieBorder.Height);
+            movieGrid.Background = Brushes.Black;
+            movieBorder.Fill = Global.drawingBrush;
+            Canvas.SetZIndex(movieBorder, 4);
+            Canvas.SetZIndex(movieGrid, 0);
+            Canvas.SetZIndex(controlsGrid, 7);
+            Canvas.SetZIndex(smallPlayButton, 8);
+            Canvas.SetZIndex(slider, 8);
+            Canvas.SetZIndex(fullScreenButton, 8);
+            Global.isFullscreen = 0;
+            controlsGrid.Margin = new Thickness(0, (ActualHeight / 2) + 250 - 51, 0, 0);
+            titleGrid.Visibility = Visibility.Visible;
+            backLabel.Visibility = Visibility.Visible;
+            homeImage.Visibility = Visibility.Visible;
+            playerGrid.VerticalAlignment = VerticalAlignment.Center;
+            playerGrid.Margin = new Thickness(0, (ActualHeight - movieBorder.ActualHeight) / 2 - .25 * ActualHeight, 0, 0); 
+            titleGrid.Margin = new Thickness(0, 783, 0, 0);
+            scrollViewer.IsEnabled = true;
+        }
         
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Escape)
             {
-                this.WindowStyle = WindowStyle.SingleBorderWindow;
-                movieBorder.Stroke.Opacity = 100;
-                movieBorder.Height = 500;
-                movieBorder.Width = Global.mbWidth;
-                Global.videoDrawing.Rect = new Rect(this.Width / 2, this.Height / 2, movieBorder.Width, movieBorder.Height);
-                movieGrid.Background = Brushes.Black;
-                movieBorder.Fill = Global.drawingBrush;
-                Canvas.SetZIndex(movieBorder, 4);
-                Canvas.SetZIndex(movieGrid, 0);
-                Canvas.SetZIndex(controlsGrid, 7);
-                Canvas.SetZIndex(smallPlayButton, 8);
-                Canvas.SetZIndex(slider, 8);
-                Canvas.SetZIndex(fullScreenButton, 8);
-                Global.isFullscreen = 0;
-                controlsGrid.Margin = new Thickness(0, (ActualHeight/2) + 250 - 51, 0, 2);
+                exitFullscreen();
             }
 
             else if (e.Key == Key.Space)
@@ -190,12 +212,7 @@ namespace movies
             }
         }
 
-        private void Window_Closed(object sender, EventArgs e)
-        {
-            System.Windows.Application.Current.Shutdown();
-        }
-
-                
+                        
 
        private void slider_DragCompleted(object sender, DragCompletedEventArgs e)
         {
@@ -243,6 +260,34 @@ namespace movies
             }
         }
 
-        
+        private void homeImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+            Window windowToNavigate = new MainWindow();
+            windowToNavigate.Show();
+            MainWindow.Global.ClearData();
+        }
+
+        private void Label_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
+            //Window windowToHide = new movieWindow();
+            //windowToHide.Close();
+            this.Close();
+            if (MainWindow.Global.movieNumber <= 10)
+            {
+                MainWindow.AppWindow.MainFrame.Navigate(new Uri("searchResultsPage1.xaml", UriKind.Relative));
+                
+            }
+            else if (MainWindow.Global.movieNumber <= 20)
+            {
+                MainWindow.AppWindow.MainFrame.Navigate(new Uri("searchResultsPage2.xaml", UriKind.Relative));
+            }
+            else if (MainWindow.Global.movieNumber <= 30)
+            {
+                MainWindow.AppWindow.MainFrame.Navigate(new Uri("searchResultsPage3.xaml", UriKind.Relative));
+            }
+            
+        }
     }
 }

@@ -114,6 +114,35 @@ namespace WpfApp1
                         descriptions.Add(div.InnerText.Trim());
 
                     }
+                    string[] temp = { "Writers", "Stars", "Genre", "Release", "Runtime" };
+                    List<string> keywords = new List<string>(temp);
+
+                    for (int i = 0; i < descriptions.Count; i++)
+                    {
+                        foreach (var keyword in keywords)
+                        {
+                            int index = descriptions[i].IndexOf(keyword);
+                            if (index >= 0)
+                            {
+                                descriptions[i] = descriptions[i].Insert(index, "\n");
+                            }
+                        }
+                        
+                    }
+                    for (int j = 0; j < descriptions.Count; j++)
+                    {
+                        int index = descriptions[j].IndexOf("mins") + 4;
+                        if (index >= 0)
+                        {
+                            descriptions[j] = descriptions[j].Insert(index, "\nSummary: ");
+                        }
+                        string targetPhrase = "Please Support";
+                        int index2 = descriptions[j].IndexOf(targetPhrase);
+                        if (index2 >= 0)
+                        {
+                            descriptions[j] = descriptions[j].Substring(0, index2);
+                        }
+                    }
 
                     //linksBox.ItemsSource = descriptions;
                     var prelimImages = new List<string>();
