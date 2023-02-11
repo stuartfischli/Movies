@@ -81,7 +81,7 @@
         </Style>
     </Window.Resources>
     <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden">
-        <Grid x:Name="movieGrid" Background="Black" Margin="-210,-59,-210,-74" Height="1170" Width="1921">
+        <Grid x:Name="movieGrid" Background="#FF231F20" Margin="-210,-59,-210,-74" Height="1170" Width="1921">
 
 
             <Grid x:Name="playerGrid" HorizontalAlignment="Center" Height="500" VerticalAlignment="Top" Width="800" MouseEnter="playerGrid_MouseEnter" MouseLeave="playerGrid_MouseLeave" MouseMove="playerGrid_MouseMove" Margin="0,200,0,0">
@@ -107,9 +107,9 @@
                 </Border>
             </Grid>
             <Label Content="" HorizontalAlignment="Center" Height="49" Margin="0,1137,0,0" VerticalAlignment="Top" Width="264" Foreground="{x:Null}"/>
-            <Border x:Name="homeImage" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="57" Margin="217,77,0,0" VerticalAlignment="Top" Width="145" CornerRadius="5,5,5,5" MouseLeftButtonUp="homeImage_MouseLeftButtonUp">
+            <Border x:Name="homeImage" BorderThickness="1" HorizontalAlignment="Left" Height="88" Margin="217,77,0,0" VerticalAlignment="Top" Width="106" CornerRadius="5,5,5,5" MouseLeftButtonUp="homeImage_MouseLeftButtonUp">
                 <Border.Background>
-                    <ImageBrush Stretch="UniformToFill" ImageSource="/NdTLIY.jpg"/>
+                    <ImageBrush Stretch="Uniform" ImageSource="/Logo.jpg"/>
                 </Border.Background>
             </Border>
             <Label x:Name="backLabel" Content="&lt; Back to search" HorizontalAlignment="Left" Height="24" Margin="562,153,0,0" VerticalAlignment="Top" Width="106" Foreground="White" MouseLeftButtonUp="Label_MouseLeftButtonUp" Cursor="Hand"/>

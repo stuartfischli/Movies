@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="searchResultsPage2">
-    <Grid Background="Black" Margin="0,0,0,-429">
+    <Grid Background="#FF231F20" Margin="0,0,0,-429">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="1114*"/>
@@ -53,6 +53,6 @@
                 <Label x:Name="prevLabelPage2" Content="Previous" HorizontalAlignment="Center" Height="36" VerticalAlignment="Center" Width="70" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="14" MouseLeftButtonUp="prevLabelPage2_MouseLeftButtonUp"/>
             </Border>
         </Grid>
-        <Image x:Name="homeImagePage2" HorizontalAlignment="Left" Height="50" Margin="0,66,0,0" VerticalAlignment="Top" Width="107" Source="/NdTLIY.jpg" MouseLeftButtonUp="Image_MouseLeftButtonUp" Grid.Column="1"/>
+        <Image x:Name="homeImagePage2" HorizontalAlignment="Left" Height="60" Margin="0,66,0,0" VerticalAlignment="Top" Width="70" Source="/Logo.jpg" MouseLeftButtonUp="Image_MouseLeftButtonUp" Grid.Column="1" Stretch="Uniform"/>
     </Grid>
 </Page>

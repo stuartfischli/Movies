@@ -5,13 +5,19 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="fullScreenButton.png" />
+    <None Remove="Logo.jpg" />
     <None Remove="NdTLIY.jpg" />
     <None Remove="playButton.png" />
     <None Remove="smallPlayButton.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +27,7 @@
 
   <ItemGroup>
     <Resource Include="fullScreenButton.png" />
+    <Resource Include="Logo.jpg" />
     <Resource Include="NdTLIY.jpg" />
     <Resource Include="playButton.png" />
     <Resource Include="smallPlayButton.png" />

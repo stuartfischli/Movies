@@ -216,6 +216,7 @@ namespace WpfApp1
 
 
                     Canvas.SetZIndex(searchBorder, 0);
+                    Canvas.SetZIndex(logo, 0);
                 }
                 
             }

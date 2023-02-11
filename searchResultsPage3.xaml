@@ -9,7 +9,7 @@
       Title="searchResultsPage3">
 
     <Grid>
-        <Grid Background="Black" Margin="0,0,10,-450">
+        <Grid Background="#FF231F20" Margin="0,0,10,-450">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="1114*"/>
@@ -56,7 +56,7 @@
                 </Border>
             </Grid>
         </Grid>
-        <Image x:Name="homeImagePage3" HorizontalAlignment="Left" Height="50" Margin="0,59,0,0" VerticalAlignment="Top" Width="107" Source="/NdTLIY.jpg" MouseLeftButtonUp="homeImagePage3_MouseLeftButtonUp"/>
+        <Image x:Name="homeImagePage3" HorizontalAlignment="Left" Height="60" Margin="0,59,0,0" VerticalAlignment="Top" Width="70" Source="/Logo.jpg" MouseLeftButtonUp="homeImagePage3_MouseLeftButtonUp" Stretch="Uniform"/>
 
     </Grid>
 </Page>
