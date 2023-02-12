@@ -9,10 +9,25 @@
     ".NETCoreApp,Version=v6.0/win-x64": {
       "Speraum Movies/1.0.0": {
         "dependencies": {
-          "HtmlAgilityPack": "1.11.46"
+          "GoogleCast": "1.7.0",
+          "HtmlAgilityPack": "1.11.46",
+          "System.Reactive.Reference": "4.4.0.0"
         },
         "runtime": {
           "Speraum Movies.dll": {}
+        }
+      },
+      "GoogleCast/1.7.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "5.0.1",
+          "Zeroconf": "3.4.2",
+          "protobuf-net": "3.0.101"
+        },
+        "runtime": {
+          "lib/netstandard2.0/GoogleCast.dll": {
+            "assemblyVersion": "1.7.0.0",
+            "fileVersion": "1.7.0.0"
+          }
         }
       },
       "HtmlAgilityPack/1.11.46": {
@@ -20,6 +35,64 @@
           "lib/netstandard2.0/HtmlAgilityPack.dll": {
             "assemblyVersion": "1.11.46.0",
             "fileVersion": "1.11.46.0"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection/5.0.1": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "assemblyVersion": "5.0.0.1",
+            "fileVersion": "5.0.120.57516"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/5.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "protobuf-net/3.0.101": {
+        "dependencies": {
+          "protobuf-net.Core": "3.0.101"
+        },
+        "runtime": {
+          "lib/net5.0/protobuf-net.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.101.59408"
+          }
+        }
+      },
+      "protobuf-net.Core/3.0.101": {
+        "runtime": {
+          "lib/net5.0/protobuf-net.Core.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.101.59408"
+          }
+        }
+      },
+      "System.Reactive/4.4.1": {},
+      "Zeroconf/3.4.2": {
+        "dependencies": {
+          "System.Reactive": "4.4.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Zeroconf.dll": {
+            "assemblyVersion": "3.4.0.0",
+            "fileVersion": "3.4.2.4556"
+          }
+        }
+      },
+      "System.Reactive.Reference/4.4.0.0": {
+        "runtime": {
+          "System.Reactive.dll": {
+            "assemblyVersion": "4.4.0.0",
+            "fileVersion": "4.4.1.57983"
           }
         }
       }
@@ -31,12 +104,66 @@
       "serviceable": false,
       "sha512": ""
     },
+    "GoogleCast/1.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-od9upMsD8uYWAtWAcUJrWxbbIFt130iykACjK4I2Wgo+OyQ/gB/qfc6ao1wDPMvgLURgihJlJ+Cp/Gqd3+Rg4Q==",
+      "path": "googlecast/1.7.0",
+      "hashPath": "googlecast.1.7.0.nupkg.sha512"
+    },
     "HtmlAgilityPack/1.11.46": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-dLMn4EVfJBHWmWK4Uh0XGD76FPLHI0qr2Tm0s1m/xmgiHb1JUb9zB8AzO8HtrkBBlMN6JfCUBYddhqC0hZNR+g==",
       "path": "htmlagilitypack/1.11.46",
       "hashPath": "htmlagilitypack.1.11.46.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-//mDNrYeiJ0eh/awFhDFJQzkRVra/njU5Y4fyK7X29g5HScrzbUkKOKlyTtygthcGFt4zNC8G5CFCjb/oizomA==",
+      "path": "microsoft.extensions.dependencyinjection/5.0.1",
+      "hashPath": "microsoft.extensions.dependencyinjection.5.0.1.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ORj7Zh81gC69TyvmcUm9tSzytcy8AVousi+IVRAI8nLieQjOFryRusSFh7+aLk16FN9pQNqJAiMd7BTKINK0kA==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/5.0.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512"
+    },
+    "protobuf-net/3.0.101": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mLm8VGfGylp9q+rbJDp3uw0BOeNzfGENecVz/EYGlzq3ss7tfajGXHCMoZm/GxJ9vSn9pcK22UXWZnQ5GJQMjA==",
+      "path": "protobuf-net/3.0.101",
+      "hashPath": "protobuf-net.3.0.101.nupkg.sha512"
+    },
+    "protobuf-net.Core/3.0.101": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gf9QIF0RlctfjmOjbE6eOyMulkNEsH7tHncjKj/4BTu9tkuTyrH3fv5I+35GnolJqKJ6fh9kYaezvNRL3t75+Q==",
+      "path": "protobuf-net.core/3.0.101",
+      "hashPath": "protobuf-net.core.3.0.101.nupkg.sha512"
+    },
+    "System.Reactive/4.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iSTPeWR9HJhGoNV4WhVlvofuiTjpok1i4E3LPgMdbMqf3jKhFlT9HAlO32lb52NLppWC/4dZQFfUzTytvyXBmw==",
+      "path": "system.reactive/4.4.1",
+      "hashPath": "system.reactive.4.4.1.nupkg.sha512"
+    },
+    "Zeroconf/3.4.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zDxdaTjrHu/EU34aMBTzF0yyOAOqPU8+qT4BPJLx0T80FFwghrWk527OR2OTaQ/wx2cLNAcMWpzaJ0TnpFfc5w==",
+      "path": "zeroconf/3.4.2",
+      "hashPath": "zeroconf.3.4.2.nupkg.sha512"
+    },
+    "System.Reactive.Reference/4.4.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

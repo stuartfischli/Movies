@@ -1,5 +1,9 @@
-﻿using System;
+﻿using GoogleCast;
+using GoogleCast.Channels;
+using GoogleCast.Models.Media;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +26,8 @@ namespace movies
     /// </summary>
     public partial class movieWindow : Window
     {
+        //public ObservableCollection<IReceiver> CastDevices { get; set; }
+        //public IReceiver SelectedCastDevice { get; set; }
 
         public movieWindow()
         {
@@ -30,6 +36,7 @@ namespace movies
             createPlayer();
             createTitleBlock();
             this.Title = MainWindow.Global.titles[0].ToString();
+            //Init();
             
         }
 
@@ -67,7 +74,7 @@ namespace movies
         
         public void createPlayer()
         {
-            Global.videoPlayer.Open(new Uri(@"C:\Users\stuartfischli\Videos\Captures\Halo Infinite 2022-06-21 16-52-03_Slomo.mp4", UriKind.Absolute));//@"C:\Users\stuartfischli\OneDrive - UNSW\PXL_20210429_032802155.mp4" @"https://t.tarahipro.ir/1401/05/thor-web/Thor.Love.and.Thunder.2022.480p.WEB-DL.SoftSub.Filmsara.mkv"
+            Global.videoPlayer.Open(new Uri(@"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", UriKind.Absolute));//@"C:\Users\stuartfischli\OneDrive - UNSW\PXL_20210429_032802155.mp4" @"https://t.tarahipro.ir/1401/05/thor-web/Thor.Love.and.Thunder.2022.480p.WEB-DL.SoftSub.Filmsara.mkv"
             Global.rect = new Rect(this.Width / 2, this.Height / 2, movieBorder.Width, movieBorder.Height);
             Global.videoDrawing.Rect = Global.rect;
             Global.videoDrawing.Player = Global.videoPlayer;
@@ -165,7 +172,6 @@ namespace movies
             movieBorder.Height = 500;
             movieBorder.Width = Global.mbWidth;
             Global.videoDrawing.Rect = new Rect(this.Width / 2, this.Height / 2, movieBorder.Width, movieBorder.Height);
-            movieGrid.Background = Brushes.Black;
             movieBorder.Fill = Global.drawingBrush;
             Canvas.SetZIndex(movieBorder, 4);
             Canvas.SetZIndex(movieGrid, 0);
@@ -263,6 +269,7 @@ namespace movies
         private void homeImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             this.Close();
+            Global.videoPlayer.Stop();
             Window windowToNavigate = new MainWindow();
             windowToNavigate.Show();
             MainWindow.Global.ClearData();
@@ -289,5 +296,36 @@ namespace movies
             }
             
         }
+
+        //private void Button_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        //{
+        //    StartCasting();
+        //}
+
+        //async void StartCasting()
+        //{
+        //    var senderDevice = new Sender();
+        //    // Connect to the Chromecast
+        //    await senderDevice.ConnectAsync(SelectedCastDevice);
+        //    // Launch the default media receiver application
+        //    var mediaChannel = senderDevice.GetChannel<IMediaChannel>();
+        //    await senderDevice.LaunchAsync(mediaChannel);
+        //    // Load and play Big Buck Bunny video
+        //    var mediaStatus = await mediaChannel.LoadAsync(new MediaInformation() { ContentId = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" });
+        //}
+
+        //async Task Init()
+        //{
+        //    var receivers = await new DeviceLocator().FindReceiversAsync();
+
+        //    //CastDevices = new ObservableCollection<IReceiver>();
+
+        //    foreach (var r in receivers)
+        //    {
+        //        CastDevices.Add(r);
+        //    }
+        //    DataContext = this;
+
+        //}
     }
 }

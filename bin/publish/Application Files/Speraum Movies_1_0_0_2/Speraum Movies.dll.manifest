@@ -54,6 +54,15 @@
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="GoogleCast.dll" size="76288">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>eX9u6cjvXgp9//UGdyk+xT6HzHXhqSVYZ4Az5qTwzlM=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="HtmlAgilityPack.dll" size="163840">
     <hash>
       <dsig:Transforms>
@@ -72,22 +81,58 @@
       <dsig:DigestValue>Hry0OcgrUCLAFjIxDZfc+MM7pU4S5pQQMmx3XxEuIs4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Speraum Movies.deps.json" size="1110">
+  <file name="Microsoft.Extensions.DependencyInjection.Abstractions.dll" size="44416">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>D06cYkWLnrL9j3+u9fShc95O7lYfqGlo6GYHB5VJr9M=</dsig:DigestValue>
+      <dsig:DigestValue>D9y5RXbA/sEzwk6cnGbGMKQv87bvOEEVycrLUTe0lGU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Speraum Movies.dll" size="2446848">
+  <file name="Microsoft.Extensions.DependencyInjection.dll" size="74120">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>eEZBDTK/rX+IaGYrHVG8SkYUQx0eG3gWwO+p+S7tuuA=</dsig:DigestValue>
+      <dsig:DigestValue>u+gNHZeUqbnws+gIn1IfNiYF+mh0Ijeke856hVI3eiM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="protobuf-net.Core.dll" size="262656">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>xUEqSxUW+wv0VFFulIam17i+XmQjet+aXlGBG/OUaSI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="protobuf-net.dll" size="259584">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ywEwDj1Je7RpDA4ENvBvqJPpyo9FM7OQ7cY7k2EwkVg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Speraum Movies.deps.json" size="5794">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>4uqh9+kF1g6uEAzJ4l0eBmkLCKsp+FpVpxNHbneSXV0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Speraum Movies.dll" size="2447360">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>CUGVdnR2B8hGC48x+m8AkUQrTUNQj0La4vpEH+guq/Q=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Speraum Movies.exe" size="261120">
@@ -106,6 +151,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>HsoPDHAHCqg7tgnkt0mybctECXhDJgMnJjlHIiJKCYo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="System.Reactive.dll" size="1268688">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>/4P+wBH60GIDpGPpy9mjNbxua0M/MqObdKIv134z2VE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Zeroconf.dll" size="77336">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>RQ8YJYSwt+u1Yx+PERdf+cH7MB0fUvn/bx3CG46OSSs=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

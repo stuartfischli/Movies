@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="GoogleCast" Version="1.7.0" />
     <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
     
   </ItemGroup>
