@@ -7,14 +7,14 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {},
     ".NETCoreApp,Version=v6.0/win-x64": {
-      "Speraum Movies/1.0.0": {
+      "Scax/1.0.0": {
         "dependencies": {
           "GoogleCast": "1.7.0",
           "HtmlAgilityPack": "1.11.46",
           "System.Reactive.Reference": "4.4.0.0"
         },
         "runtime": {
-          "Speraum Movies.dll": {}
+          "Scax.dll": {}
         }
       },
       "GoogleCast/1.7.0": {
@@ -99,7 +99,7 @@
     }
   },
   "libraries": {
-    "Speraum Movies/1.0.0": {
+    "Scax/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
