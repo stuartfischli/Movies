@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Icon.ico" />
+    <Resource Include="Icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,7 +28,7 @@
 
   <ItemGroup>
     <Resource Include="fullScreenButton.png" />
-    <Resource Include="Logo.jpg" />
+    <Content Include="Logo.jpg" />
     <Resource Include="NdTLIY.jpg" />
     <Resource Include="playButton.png" />
     <Resource Include="smallPlayButton.png" />
