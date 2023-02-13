@@ -141,7 +141,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>xvRiDl687v34Z4yAIKsHKY5oGHLOh3R5Eo32imFFuAY=</dsig:DigestValue>
+      <dsig:DigestValue>86/A7ogO0O28cdGCYXt5uarXQSDbQhz76UHTtmKuCsY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Speraum Movies.exe" size="261120">

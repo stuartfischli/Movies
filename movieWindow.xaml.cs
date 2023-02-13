@@ -126,7 +126,7 @@ namespace movies
             Canvas.SetZIndex(controlsGrid, 6);
             Canvas.SetZIndex(controlsBorder, 6);
             movieBorder.Fill = Global.drawingBrush;
-            playerGrid.HorizontalAlignment = HorizontalAlignment.Center;
+            playerGrid.HorizontalAlignment = HorizontalAlignment.Left;
             playerGrid.Width = this.Width;
             playerGrid.Height = Global.mbHeight;
             movieBorder.Width = this.Width;
@@ -185,6 +185,7 @@ namespace movies
             titleGrid.Visibility = Visibility.Visible;
             backLabel.Visibility = Visibility.Visible;
             homeImage.Visibility = Visibility.Visible;
+            playerGrid.HorizontalAlignment = HorizontalAlignment.Center;
             playerGrid.VerticalAlignment = VerticalAlignment.Center;
             playerGrid.Margin = new Thickness(0, (ActualHeight - movieBorder.ActualHeight) / 2 - .25 * ActualHeight, 0, 0); 
             titleGrid.Margin = new Thickness(0, 783, 0, 0);
