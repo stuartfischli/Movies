@@ -126,7 +126,7 @@ namespace movies
             Canvas.SetZIndex(controlsGrid, 6);
             Canvas.SetZIndex(controlsBorder, 6);
             movieBorder.Fill = Global.drawingBrush;
-            playerGrid.HorizontalAlignment = HorizontalAlignment.Left;
+            playerGrid.HorizontalAlignment = HorizontalAlignment.Center;
             playerGrid.Width = this.Width;
             playerGrid.Height = Global.mbHeight;
             movieBorder.Width = this.Width;

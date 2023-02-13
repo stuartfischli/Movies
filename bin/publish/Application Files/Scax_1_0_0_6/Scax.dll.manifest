@@ -135,13 +135,13 @@
       <dsig:DigestValue>k8uEUCW+gp+OVX4iAmF18seETWbjsu40EVn5N2AMj2k=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Scax.dll" size="1768960">
+  <file name="Scax.dll" size="1769472">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>sz+bTQX2oUb/uByLUYy8ty1Iru21+JOytytSRZfADyg=</dsig:DigestValue>
+      <dsig:DigestValue>4NnrR7vy4avlcSk2pjpQLYIVe4bPoQvj0hxBp10ur2k=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Scax.exe" size="260608">
