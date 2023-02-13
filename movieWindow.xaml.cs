@@ -300,6 +300,14 @@ namespace movies
             
         }
 
+        private void slider_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (Global.TotalTime.TotalSeconds > 0)
+            {
+                Global.videoPlayer.Position = TimeSpan.FromSeconds(slider.Value);
+            }
+        }
+
         //private void Button_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         //{
         //    StartCasting();
