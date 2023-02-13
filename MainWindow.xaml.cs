@@ -192,6 +192,7 @@ namespace WpfApp1
                 proceed = 0;
                 Canvas.SetZIndex(AppWindow.searchBar, 5);
                 Canvas.SetZIndex(AppWindow.searchBorder, 5);
+                AppWindow.Title = "Scax";
             }
         }
 
