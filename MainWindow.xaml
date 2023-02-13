@@ -18,9 +18,10 @@
                 <TextBox x:Name="searchBar" HorizontalAlignment="Center" x:FieldModifier="public" VerticalContentAlignment="Center" Height="26" TextWrapping="Wrap" VerticalAlignment="Center" Width="548" BorderThickness="0,0,0,0" Background="#FFE4E5EB" KeyDown="searchBar_KeyDown" FontFamily="Roboto" FontSize="16" HorizontalContentAlignment="Left" />
             </Border>
             <Image x:Name="logo" HorizontalAlignment="Left" Height="82" Margin="371,41,0,0" VerticalAlignment="Top" Width="116" Source="/Logo.jpg" Grid.ColumnSpan="2" Panel.ZIndex="3"/>
+        <Label Content="MASON SUX" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="107" Margin="0,283,0,0" VerticalAlignment="Top" Width="847" Foreground="#FFFB1818" Panel.ZIndex="4" FontSize="72" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
 
 
-        </Grid>
+    </Grid>
     
 
 
