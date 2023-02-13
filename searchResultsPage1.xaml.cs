@@ -111,7 +111,7 @@ namespace movies
         {
             //this.Visibility= Visibility.Hidden;
             //Window windowToHide = new MainWindow();
-            //windowToHide.Hide();
+            //windowToHide.Close();
             Window windowToNavigate = new movieWindow();
             windowToNavigate.Show();
             MainWindow.Global.movieNumber = 1;

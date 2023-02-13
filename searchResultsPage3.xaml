@@ -7,56 +7,58 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="searchResultsPage3">
+    <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
 
-    <Grid>
-        <Grid Background="#FF231F20" Margin="0,0,10,-450">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="1114*"/>
-            </Grid.ColumnDefinitions>
-            <Grid HorizontalAlignment="Center" Height="296" Margin="0,196,0,0" VerticalAlignment="Top" Width="1038" Grid.Column="1">
+        <Grid>
+            <Grid Background="#FF231F20" Margin="0,0,10,-450">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="1114*"/>
                 </Grid.ColumnDefinitions>
-                <Image x:Name="image21" HorizontalAlignment="Left" Height="225" Margin="10,10,0,0" VerticalAlignment="Top" Width="150" Stretch="Fill" MouseLeftButtonUp="image21_MouseLeftButtonUp"/>
-                <Image x:Name="image22" HorizontalAlignment="Left" Height="225" Margin="224,10,0,0" VerticalAlignment="Top" Width="150" Stretch="Fill"/>
-                <Image x:Name="image23" HorizontalAlignment="Left" Height="225" Margin="444,10,0,0" VerticalAlignment="Top" Width="150" Stretch="Fill" Grid.ColumnSpan="2"/>
-                <Image x:Name="image24" HorizontalAlignment="Left" Height="225" Margin="141,10,0,0" VerticalAlignment="Top" Width="150" Stretch="Fill" Grid.Column="1"/>
-                <Image x:Name="image25" HorizontalAlignment="Left" Height="225" Margin="354,10,0,0" VerticalAlignment="Top" Width="150" Grid.Column="1" Stretch="Fill"/>
-                <TextBlock x:Name="label21" HorizontalAlignment="Left" Height="48" Margin="10,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="150" Foreground="#FFFDFBFB"/>
-                <TextBlock x:Name="label22" HorizontalAlignment="Left" Height="48" Margin="224,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="150" Foreground="#FFFDFBFB"/>
-                <TextBlock x:Name="label23" HorizontalAlignment="Left" Height="48" Margin="444,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="150" Foreground="#FFFDFBFB" Grid.ColumnSpan="2"/>
-                <TextBlock x:Name="label24" HorizontalAlignment="Left" Height="48" Margin="141,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="150" Foreground="#FFFDFBFB" Grid.Column="1"/>
-                <TextBlock x:Name="label25" HorizontalAlignment="Left" Height="48" Margin="354,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="150" Foreground="#FFFDFBFB" Grid.Column="1"/>
+                <Grid HorizontalAlignment="Center" Height="296" Margin="0,196,0,0" VerticalAlignment="Top" Width="1038" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="image21" HorizontalAlignment="Left" Height="225" Margin="10,10,0,0" VerticalAlignment="Top" Width="150" Stretch="Fill" MouseLeftButtonUp="image21_MouseLeftButtonUp"/>
+                    <Image x:Name="image22" HorizontalAlignment="Left" Height="225" Margin="224,10,0,0" VerticalAlignment="Top" Width="150" Stretch="Fill"/>
+                    <Image x:Name="image23" HorizontalAlignment="Left" Height="225" Margin="444,10,0,0" VerticalAlignment="Top" Width="150" Stretch="Fill" Grid.ColumnSpan="2"/>
+                    <Image x:Name="image24" HorizontalAlignment="Left" Height="225" Margin="141,10,0,0" VerticalAlignment="Top" Width="150" Stretch="Fill" Grid.Column="1"/>
+                    <Image x:Name="image25" HorizontalAlignment="Left" Height="225" Margin="354,10,0,0" VerticalAlignment="Top" Width="150" Grid.Column="1" Stretch="Fill"/>
+                    <TextBlock x:Name="label21" HorizontalAlignment="Left" Height="48" Margin="10,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="150" Foreground="#FFFDFBFB"/>
+                    <TextBlock x:Name="label22" HorizontalAlignment="Left" Height="48" Margin="224,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="150" Foreground="#FFFDFBFB"/>
+                    <TextBlock x:Name="label23" HorizontalAlignment="Left" Height="48" Margin="444,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="150" Foreground="#FFFDFBFB" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="label24" HorizontalAlignment="Left" Height="48" Margin="141,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="150" Foreground="#FFFDFBFB" Grid.Column="1"/>
+                    <TextBlock x:Name="label25" HorizontalAlignment="Left" Height="48" Margin="354,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="150" Foreground="#FFFDFBFB" Grid.Column="1"/>
+                </Grid>
+                <Grid HorizontalAlignment="Center" Height="296" Margin="0,505,0,0" VerticalAlignment="Top" Width="1038" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="image26" HorizontalAlignment="Left" Height="225" Margin="10,10,0,0" VerticalAlignment="Top" Width="150" Stretch="Fill"/>
+                    <Image x:Name="image27" HorizontalAlignment="Left" Height="225" Margin="224,10,0,0" VerticalAlignment="Top" Width="150" Stretch="Fill"/>
+                    <Image x:Name="image28" HorizontalAlignment="Left" Height="225" Margin="444,10,0,0" VerticalAlignment="Top" Width="150" Stretch="Fill" Grid.ColumnSpan="2"/>
+                    <Image x:Name="image29" HorizontalAlignment="Left" Height="225" Margin="141,10,0,0" VerticalAlignment="Top" Width="150" Stretch="Fill" Grid.Column="1"/>
+                    <Image x:Name="image30" HorizontalAlignment="Left" Height="225" Margin="354,10,0,0" VerticalAlignment="Top" Width="150" Grid.Column="1" Stretch="Fill"/>
+                    <TextBlock x:Name="label26" HorizontalAlignment="Left" Height="48" Margin="10,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="150" Foreground="#FFFDFBFB"/>
+                    <TextBlock x:Name="label27" HorizontalAlignment="Left" Height="48" Margin="224,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="150" Foreground="#FFFDFBFB"/>
+                    <TextBlock x:Name="label28" HorizontalAlignment="Left" Height="48" Margin="444,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="150" Foreground="#FFFDFBFB" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="label29" HorizontalAlignment="Left" Height="48" Margin="141,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="150" Foreground="#FFFDFBFB" Grid.Column="1"/>
+                    <TextBlock x:Name="label30" HorizontalAlignment="Left" Height="48" Margin="354,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="150" Foreground="#FFFDFBFB" Grid.Column="1"/>
+                </Grid>
+                <Label x:Name="resultsLabelPage3" Grid.Column="1" HorizontalAlignment="Left" Height="37" Margin="220,127,0,0" VerticalAlignment="Top" Width="243" FontFamily="Segoe UI" FontSize="16" Foreground="#FFFAF6F6"/>
+                <Grid Grid.Column="1" HorizontalAlignment="Center" Height="36" Margin="0,834,0,0" VerticalAlignment="Top" Width="197">
+                    <Border x:Name="nextBorderPage3" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="36" Margin="107,0,0,0" VerticalAlignment="Center" Width="90" Background="#FFE92E1B" CornerRadius="10,10,10,10">
+                        <Label x:Name="nextLabelPage3" Content="Next" HorizontalAlignment="Center" Height="36" VerticalAlignment="Center" Width="70" FontWeight="Bold" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    </Border>
+                    <Border x:Name="prevBorderPage3" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" Width="90" Background="#FFE92E1B" CornerRadius="10,10,10,10">
+                        <Label x:Name="prevLabelPage3" Content="Previous" HorizontalAlignment="Center" Height="36" VerticalAlignment="Center" Width="70" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="14" MouseLeftButtonUp="prevLabelPage3_MouseLeftButtonUp_1"/>
+                    </Border>
+                </Grid>
             </Grid>
-            <Grid HorizontalAlignment="Center" Height="296" Margin="0,505,0,0" VerticalAlignment="Top" Width="1038" Grid.Column="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Image x:Name="image26" HorizontalAlignment="Left" Height="225" Margin="10,10,0,0" VerticalAlignment="Top" Width="150" Stretch="Fill"/>
-                <Image x:Name="image27" HorizontalAlignment="Left" Height="225" Margin="224,10,0,0" VerticalAlignment="Top" Width="150" Stretch="Fill"/>
-                <Image x:Name="image28" HorizontalAlignment="Left" Height="225" Margin="444,10,0,0" VerticalAlignment="Top" Width="150" Stretch="Fill" Grid.ColumnSpan="2"/>
-                <Image x:Name="image29" HorizontalAlignment="Left" Height="225" Margin="141,10,0,0" VerticalAlignment="Top" Width="150" Stretch="Fill" Grid.Column="1"/>
-                <Image x:Name="image30" HorizontalAlignment="Left" Height="225" Margin="354,10,0,0" VerticalAlignment="Top" Width="150" Grid.Column="1" Stretch="Fill"/>
-                <TextBlock x:Name="label26" HorizontalAlignment="Left" Height="48" Margin="10,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="150" Foreground="#FFFDFBFB"/>
-                <TextBlock x:Name="label27" HorizontalAlignment="Left" Height="48" Margin="224,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="150" Foreground="#FFFDFBFB"/>
-                <TextBlock x:Name="label28" HorizontalAlignment="Left" Height="48" Margin="444,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="150" Foreground="#FFFDFBFB" Grid.ColumnSpan="2"/>
-                <TextBlock x:Name="label29" HorizontalAlignment="Left" Height="48" Margin="141,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="150" Foreground="#FFFDFBFB" Grid.Column="1"/>
-                <TextBlock x:Name="label30" HorizontalAlignment="Left" Height="48" Margin="354,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="150" Foreground="#FFFDFBFB" Grid.Column="1"/>
-            </Grid>
-            <Label x:Name="resultsLabelPage3" Grid.Column="1" HorizontalAlignment="Left" Height="37" Margin="220,127,0,0" VerticalAlignment="Top" Width="243" FontFamily="Segoe UI" FontSize="16" Foreground="#FFFAF6F6"/>
-            <Grid Grid.Column="1" HorizontalAlignment="Center" Height="36" Margin="0,834,0,0" VerticalAlignment="Top" Width="197">
-                <Border x:Name="nextBorderPage3" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="36" Margin="107,0,0,0" VerticalAlignment="Center" Width="90" Background="#FFE92E1B" CornerRadius="10,10,10,10">
-                    <Label x:Name="nextLabelPage3" Content="Next" HorizontalAlignment="Center" Height="36" VerticalAlignment="Center" Width="70" FontWeight="Bold" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                </Border>
-                <Border x:Name="prevBorderPage3" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" Width="90" Background="#FFE92E1B" CornerRadius="10,10,10,10">
-                    <Label x:Name="prevLabelPage3" Content="Previous" HorizontalAlignment="Center" Height="36" VerticalAlignment="Center" Width="70" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="14" MouseLeftButtonUp="prevLabelPage3_MouseLeftButtonUp_1"/>
-                </Border>
-            </Grid>
+            <Image x:Name="homeImagePage3" HorizontalAlignment="Left" Height="60" Margin="0,59,0,0" VerticalAlignment="Top" Width="70" Source="/Logo.jpg" MouseLeftButtonUp="homeImagePage3_MouseLeftButtonUp" Stretch="Uniform"/>
+
         </Grid>
-        <Image x:Name="homeImagePage3" HorizontalAlignment="Left" Height="60" Margin="0,59,0,0" VerticalAlignment="Top" Width="70" Source="/Logo.jpg" MouseLeftButtonUp="homeImagePage3_MouseLeftButtonUp" Stretch="Uniform"/>
-
-    </Grid>
+    </ScrollViewer>
 </Page>

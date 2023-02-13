@@ -1,4 +1,4 @@
-﻿<Page x:Name="resultsPage" x:Class="movies.SearchResults"
+﻿    <Page x:Name="resultsPage" x:Class="movies.SearchResults"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,8 +7,8 @@
       mc:Ignorable="d" 
       d:DesignHeight="609.2" d:DesignWidth="955.6"
       Title="searchResults">
-
-    <Grid Background="#FF231F20" Margin="0,0,0,-268">
+    <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
+        <Grid Background="#FF231F20" Margin="0,0,0,-268">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="1114*"/>
@@ -55,5 +55,9 @@
             </Border>
         </Grid>
         <Image x:Name="homeImagePage1" HorizontalAlignment="Left" Height="71" Margin="42,66,0,0" VerticalAlignment="Top" Width="93" Source="/Logo.jpg" MouseLeftButtonUp="Image_MouseLeftButtonUp" Panel.ZIndex="4" Grid.Column="1"/>
-    </Grid>
+        </Grid>
+    </ScrollViewer>
+
+
+
 </Page>

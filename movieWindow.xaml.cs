@@ -126,6 +126,7 @@ namespace movies
             Canvas.SetZIndex(controlsGrid, 6);
             Canvas.SetZIndex(controlsBorder, 6);
             movieBorder.Fill = Global.drawingBrush;
+            playerGrid.HorizontalAlignment = HorizontalAlignment.Center;
             playerGrid.Width = this.Width;
             playerGrid.Height = Global.mbHeight;
             movieBorder.Width = this.Width;
@@ -273,6 +274,7 @@ namespace movies
             Window windowToNavigate = new MainWindow();
             windowToNavigate.Show();
             MainWindow.Global.ClearData();
+            
         }
 
         private void Label_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -281,6 +283,7 @@ namespace movies
             //Window windowToHide = new movieWindow();
             //windowToHide.Close();
             this.Close();
+            Global.videoPlayer.Stop();
             if (MainWindow.Global.movieNumber <= 10)
             {
                 MainWindow.AppWindow.MainFrame.Navigate(new Uri("searchResultsPage1.xaml", UriKind.Relative));
