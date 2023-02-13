@@ -27,7 +27,7 @@ namespace movies
         public SearchResults()
         {
             InitializeComponent();
-
+            MainWindow.AppWindow.Title = "Search: \"" + MainWindow.Global.searchTerm + "\"";
             
             try
             {

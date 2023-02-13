@@ -208,6 +208,7 @@ namespace WpfApp1
                 {
                     noResultsLabel.Content = "No results.";
                     Canvas.SetZIndex(noResultsLabel, 3);
+                    Global.ClearData();
                 }
                 else
                 {
