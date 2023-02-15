@@ -1,7 +1,4 @@
-﻿using GoogleCast;
-using GoogleCast.Channels;
-using GoogleCast.Models.Media;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -18,6 +15,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using WpfApp1;
+using System.Net;
+using System.Net.Sockets;
+using GoogleCast;
+using GoogleCast.Channels;
+using GoogleCast.Models.Media;
 
 namespace movies
 {
@@ -26,9 +28,8 @@ namespace movies
     /// </summary>
     public partial class movieWindow : Window
     {
-        //public ObservableCollection<IReceiver> CastDevices { get; set; }
-        //public IReceiver SelectedCastDevice { get; set; }
-
+        public ObservableCollection<IReceiver> CastDevices = new ObservableCollection<IReceiver>();
+                        
         public movieWindow()
         {
             DataContext = this;
@@ -36,8 +37,8 @@ namespace movies
             createPlayer();
             createTitleBlock();
             this.Title = MainWindow.Global.titles[0].ToString();
-            //Init();
-            
+            Init();
+                        
         }
 
         public void createTitleBlock()
@@ -69,6 +70,7 @@ namespace movies
             public static double mbWidth = new double();
             public static double mbHeight = new double();   
             public static int isFullscreen = 0;
+            
         }
        
         
@@ -86,6 +88,7 @@ namespace movies
             Global.timer.Tick += new EventHandler(ticktock);
             Global.videoPlayer.MediaOpened += new EventHandler(mediaOpened);
             controlsGrid.Margin = new Thickness(0, 500 - 50, 0, 2);
+            castBorder.Visibility = Visibility.Hidden;
 
         }
 
@@ -188,7 +191,7 @@ namespace movies
             playerGrid.HorizontalAlignment = HorizontalAlignment.Center;
             playerGrid.VerticalAlignment = VerticalAlignment.Center;
             playerGrid.Margin = new Thickness(0, (ActualHeight - movieBorder.ActualHeight) / 2 - .25 * ActualHeight, 0, 0); 
-            titleGrid.Margin = new Thickness(0, 783, 0, 0);
+            titleGrid.Margin = new Thickness(0, 765, 0, 0);
             scrollViewer.IsEnabled = true;
         }
         
@@ -309,35 +312,44 @@ namespace movies
             }
         }
 
+
         //private void Button_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         //{
         //    StartCasting();
         //}
 
-        //async void StartCasting()
-        //{
-        //    var senderDevice = new Sender();
-        //    // Connect to the Chromecast
-        //    await senderDevice.ConnectAsync(SelectedCastDevice);
-        //    // Launch the default media receiver application
-        //    var mediaChannel = senderDevice.GetChannel<IMediaChannel>();
-        //    await senderDevice.LaunchAsync(mediaChannel);
-        //    // Load and play Big Buck Bunny video
-        //    var mediaStatus = await mediaChannel.LoadAsync(new MediaInformation() { ContentId = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" });
-        //}
+                    
+        async Task Init()
+        {
+            var chromecasts = (await new DeviceLocator().FindReceiversAsync());
+            foreach (var r in chromecasts)
+            {
+                CastDevices.Add(r);
+            }
+            chromecastList.ItemsSource = CastDevices;
+            chromecastList.DisplayMemberPath = "FriendlyName";
+        }   
+       
+        private void castButton_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            castBorder.Visibility = Visibility.Visible;
+            chromecastList.Visibility = Visibility.Visible;
+                        
+        }
 
-        //async Task Init()
-        //{
-        //    var receivers = await new DeviceLocator().FindReceiversAsync();
+        private async void chromecastList_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            
+            int selected = chromecastList.SelectedIndex;
+            var caster = new Sender();
+            await caster.ConnectAsync(CastDevices[selected]);
+            var mediaChannel = caster.GetChannel<IMediaChannel>();
+            await caster.LaunchAsync(mediaChannel);
+            // Load and play Big Buck Bunny video
+            _ = await mediaChannel.LoadAsync(
+                new MediaInformation() { ContentId = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" });
 
-        //    //CastDevices = new ObservableCollection<IReceiver>();
-
-        //    foreach (var r in receivers)
-        //    {
-        //        CastDevices.Add(r);
-        //    }
-        //    DataContext = this;
-
-        //}
+            castBorder.Visibility = Visibility.Hidden;
+        }
     }
 }

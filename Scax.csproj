@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="chromecast.png" />
     <None Remove="fullScreenButton.png" />
     <None Remove="Logo.jpg" />
     <None Remove="NdTLIY.jpg" />
@@ -17,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="chromecast.png" />
     <Resource Include="Icon.ico" />
   </ItemGroup>
 

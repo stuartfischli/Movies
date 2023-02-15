@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:movies"
-        mc:Ignorable="d" Height="1165" Width="1920" WindowState="Maximized" KeyDown="Window_KeyDown" SnapsToDevicePixels="True" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.CanContentScroll="True">
+        mc:Ignorable="d" Height="1342" Width="1900" WindowState="Maximized" KeyDown="Window_KeyDown" SnapsToDevicePixels="True" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.CanContentScroll="True">
 
     <Window.Resources>
 
@@ -80,8 +80,8 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-    <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden">
-        <Grid x:Name="movieGrid" Background="#FF231F20" Margin="-210,-59,-210,-74" Height="1170" Width="1921">
+    <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="0,0,0,-52">
+        <Grid x:Name="movieGrid" Background="#FF231F20" Margin="-210,-59,-210,-74" Height="1342" Width="1910">
             <Grid x:Name="playerGrid" HorizontalAlignment="Center" Height="500" VerticalAlignment="Top" Width="800" MouseEnter="playerGrid_MouseEnter" MouseLeave="playerGrid_MouseLeave" MouseMove="playerGrid_MouseMove" Margin="0,200,0,0">
 
 
@@ -89,22 +89,35 @@
                 <Grid x:Name="controlsGrid" HorizontalAlignment="Center" Height="47" Margin="0,443,0,0" VerticalAlignment="Top" Width="780">
                     <Border x:Name="controlsBorder" BorderThickness="1" HorizontalAlignment="Center" Height="48" VerticalAlignment="Center" Width="780" Background="#FF4E4D4D" Opacity="0.5" CornerRadius="7,7,7,7" Visibility="Visible"/>
                     <Image x:Name="fullScreenButton" HorizontalAlignment="Left" Height="22" Margin="743,0,0,0" VerticalAlignment="Center" Width="22" Source="/fullScreenButton.png" Cursor="Hand" MouseLeftButtonUp="fullScreenButton_MouseLeftButtonUp_1"/>
-                    <Slider x:Name="slider" Thumb.DragCompleted="slider_DragCompleted" Style="{StaticResource Horizontal_Slider}" HorizontalAlignment="Center" Height="0" VerticalAlignment="Center" Width="694" Foreground="#FFF12612" RenderTransformOrigin="3.053,1.164" IsMoveToPointEnabled="True" MouseLeftButtonUp="slider_MouseLeftButtonUp" TickFrequency="1" IsSnapToTickEnabled="False" Cursor="Hand"/>
+                    <Slider x:Name="slider" Thumb.DragCompleted="slider_DragCompleted" Style="{StaticResource Horizontal_Slider}" HorizontalAlignment="Left" Height="0" VerticalAlignment="Center" Width="658" Foreground="#FFF12612" RenderTransformOrigin="3.053,1.164" IsMoveToPointEnabled="True" MouseLeftButtonUp="slider_MouseLeftButtonUp" TickFrequency="1" IsSnapToTickEnabled="False" Cursor="Hand" Margin="36,0,0,0"/>
                     <Image x:Name="smallPlayButton" HorizontalAlignment="Left" Height="25" Margin="6,0,0,0" VerticalAlignment="Center" Width="25" Source="/smallPlayButton.png"/>
+                    <Image x:Name="castButton" HorizontalAlignment="Left" Height="15" Margin="714,0,0,0" VerticalAlignment="Center" Width="20" Source="/chromecast.png" MouseLeftButtonUp="castButton_MouseLeftButtonUp"/>
                 </Grid>
                 <Image x:Name="playButton" Margin="375,225,375,225" Source="/playButton.png" Stretch="Fill" Cursor="Hand" MouseLeftButtonUp="playButton_MouseLeftButtonUp" Width="60" Height="60"/>
+                <Border x:Name="castBorder" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="132" VerticalAlignment="Center" Width="199" CornerRadius="10,10,10,10" Background="#FF231F20">
+                    <ListView x:Name="chromecastList" HorizontalAlignment="Center" Height="132" VerticalAlignment="Center" Width="199" d:ItemsSource="{d:SampleData ItemCount=2}" HorizontalContentAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontSize="14" ClipToBounds="True" Padding="5,5,5,0" BorderThickness="0,0,0,0" MouseLeftButtonUp="chromecastList_MouseLeftButtonUp">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="BorderThickness" Value="3"/>
+                                <Setter Property="Margin" Value="3"/>
+                                <Setter Property="Padding" Value="3"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        
+                    </ListView>
+                </Border>
             </Grid>
-            <Grid x:Name="titleGrid" HorizontalAlignment="Center" Height="320" Margin="0,765,0,0" VerticalAlignment="Top" Width="990">
-                <Border BorderThickness="1" HorizontalAlignment="Center" Height="320" VerticalAlignment="Center" Width="990" Background="#FF101010" CornerRadius="10,10,10,10"/>
-                <TextBlock x:Name="metadataBlock" HorizontalAlignment="Left" Height="195" Margin="207,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="735" Foreground="White" FontSize="14"/>
-                <TextBlock x:Name="titleLabel" HorizontalAlignment="Left" Height="63" Margin="207,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="413" FontSize="20" Foreground="White" FontWeight="Bold" TextAlignment="Center"/>
-                <Border x:Name="coverImage" BorderThickness="1" HorizontalAlignment="Left" Height="251" Margin="10,10,0,0" VerticalAlignment="Top" Width="175" CornerRadius="4,4,4,4">
+            <Grid x:Name="titleGrid" HorizontalAlignment="Center" Height="367" Margin="0,765,0,0" VerticalAlignment="Top" Width="997">
+                <Border BorderThickness="1" HorizontalAlignment="Center" Height="366" VerticalAlignment="Center" Width="997" Background="#FF101010" CornerRadius="10,10,10,10"/>
+                <TextBlock x:Name="metadataBlock" HorizontalAlignment="Left" Height="318" Margin="339,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="612" Foreground="White" FontSize="14"/>
+                <TextBlock x:Name="titleLabel" HorizontalAlignment="Left" Height="52" Margin="10,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" FontSize="20" Foreground="White" FontWeight="Bold" TextAlignment="Center"/>
+                <Border x:Name="coverImage" BorderThickness="1" HorizontalAlignment="Left" Height="278" Margin="74,72,0,0" VerticalAlignment="Top" Width="202" CornerRadius="4,4,4,4">
                     <Border.Background>
                         <ImageBrush Stretch="Uniform"/>
                     </Border.Background>
                 </Border>
             </Grid>
-            <Label Content="" HorizontalAlignment="Center" Height="49" Margin="0,1137,0,0" VerticalAlignment="Top" Width="264" Foreground="{x:Null}"/>
+            <Label Content="" HorizontalAlignment="Center" Height="49" Margin="0,1283,0,0" VerticalAlignment="Top" Width="264" Foreground="{x:Null}"/>
             <Border x:Name="homeImage" BorderThickness="1" HorizontalAlignment="Left" Height="88" Margin="338,77,0,0" VerticalAlignment="Top" Width="106" CornerRadius="5,5,5,5" MouseLeftButtonUp="homeImage_MouseLeftButtonUp">
                 <Border.Background>
                     <ImageBrush Stretch="Uniform" ImageSource="/Logo.jpg"/>

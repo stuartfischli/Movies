@@ -74,7 +74,7 @@ namespace WpfApp1
                     {
                         int pFrom = title.IndexOf("var x=") + "var x='".Length;
                         int pTo = title.IndexOf("var y=") - 2;
-                        titles.Add(title.Substring(pFrom, pTo - pFrom));
+                        titles.Add(title.Substring(pFrom, pTo - pFrom).Trim());
                     }
 
                     for (int i = 0; i < titles.Count; i++)
@@ -131,20 +131,19 @@ namespace WpfApp1
                     }
                     for (int j = 0; j < descriptions.Count; j++)
                     {
-                        int index = descriptions[j].IndexOf("mins") + 4;
-                        if (index >= 0)
+                        int index = descriptions[j].IndexOf("min");
+                        if (index > 0)
                         {
-                            descriptions[j] = descriptions[j].Insert(index, "\nSummary: ");
+                            descriptions[j] = descriptions[j].Insert(index + 4, "\nSummary: ");
                         }
                         string targetPhrase = "Please Support";
                         int index2 = descriptions[j].IndexOf(targetPhrase);
-                        if (index2 >= 0)
+                        if (index2 > 0)
                         {
                             descriptions[j] = descriptions[j].Substring(0, index2);
                         }
                     }
-
-                    //linksBox.ItemsSource = descriptions;
+                                        
                     var prelimImages = new List<string>();
                     foreach (var div in doc.DocumentNode.SelectNodes("//div[@class='post-body']//img"))
                     {
