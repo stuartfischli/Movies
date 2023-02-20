@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:movies"
-        mc:Ignorable="d" Height="1342" Width="1900" WindowState="Maximized" KeyDown="Window_KeyDown" SnapsToDevicePixels="True" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.CanContentScroll="True">
+        mc:Ignorable="d" Height="1342" Width="1920" WindowState="Maximized" KeyDown="Window_KeyDown" SnapsToDevicePixels="True" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.CanContentScroll="True" Closed="playerWindow_Closed">
 
     <Window.Resources>
 
@@ -80,12 +80,12 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-    <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="0,0,0,-52">
-        <Grid x:Name="movieGrid" Background="#FF231F20" Margin="-210,-59,-210,-74" Height="1342" Width="1910">
-            <Grid x:Name="playerGrid" HorizontalAlignment="Center" Height="500" VerticalAlignment="Top" Width="800" MouseEnter="playerGrid_MouseEnter" MouseLeave="playerGrid_MouseLeave" MouseMove="playerGrid_MouseMove" Margin="0,200,0,0">
+    <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="0,0,0,-52" Foreground="{x:Null}" Background="#FF231F20">
+        <Grid x:Name="movieGrid" Background="#FF231F20" Margin="-210,-59,-210,-74" Height="1340" Width="1920">
+            <Grid x:Name="playerGrid" HorizontalAlignment="Center" Height="500" VerticalAlignment="Top" Width="800" MouseEnter="playerGrid_MouseEnter" MouseMove="playerGrid_MouseMove" Margin="0,200,0,0">
 
 
-                <Rectangle x:Name="movieBorder" HorizontalAlignment="Center" Height="500" Stroke="#FFE92E1B" VerticalAlignment="Center" Width="800" Fill="Black" RadiusX="10" RadiusY="10"/>
+                <Rectangle x:Name="movieBorder" HorizontalAlignment="Center" Height="500" Stroke="#FFE92E1B" VerticalAlignment="Center" Width="800" Fill="Black" RadiusX="10" RadiusY="10" MouseLeave="movieBorder_MouseLeave"/>
                 <Grid x:Name="controlsGrid" HorizontalAlignment="Center" Height="47" Margin="0,443,0,0" VerticalAlignment="Top" Width="780">
                     <Border x:Name="controlsBorder" BorderThickness="1" HorizontalAlignment="Center" Height="48" VerticalAlignment="Center" Width="780" Background="#FF4E4D4D" Opacity="0.5" CornerRadius="7,7,7,7" Visibility="Visible"/>
                     <Image x:Name="fullScreenButton" HorizontalAlignment="Left" Height="22" Margin="743,0,0,0" VerticalAlignment="Center" Width="22" Source="/fullScreenButton.png" Cursor="Hand" MouseLeftButtonUp="fullScreenButton_MouseLeftButtonUp_1"/>
@@ -97,13 +97,13 @@
                 <Border x:Name="castBorder" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="132" VerticalAlignment="Center" Width="199" CornerRadius="10,10,10,10" Background="#FF231F20">
                     <ListView x:Name="chromecastList" HorizontalAlignment="Center" Height="132" VerticalAlignment="Center" Width="199" d:ItemsSource="{d:SampleData ItemCount=2}" HorizontalContentAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontSize="14" ClipToBounds="True" Padding="5,5,5,0" BorderThickness="0,0,0,0" MouseLeftButtonUp="chromecastList_MouseLeftButtonUp">
                         <ListView.ItemContainerStyle>
-                            <Style TargetType="ListViewItem">
+                            <Style TargetType="{x:Type ListViewItem}">
                                 <Setter Property="BorderThickness" Value="3"/>
                                 <Setter Property="Margin" Value="3"/>
                                 <Setter Property="Padding" Value="3"/>
                             </Style>
                         </ListView.ItemContainerStyle>
-                        
+
                     </ListView>
                 </Border>
             </Grid>

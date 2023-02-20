@@ -114,7 +114,7 @@ namespace movies
             //windowToHide.Close();
             Window windowToNavigate = new movieWindow();
             windowToNavigate.Show();
-            MainWindow.Global.movieNumber = 1;
+            MainWindow.Global.movieNumber = 0;
 
         }
 
@@ -125,7 +125,7 @@ namespace movies
             //windowToHide.Hide();
             Window windowToNavigate = new movieWindow();
             windowToNavigate.Show();
-            MainWindow.Global.movieNumber = 2;
+            MainWindow.Global.movieNumber = 1;
         }
     }
 

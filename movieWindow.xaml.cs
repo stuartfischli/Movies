@@ -29,7 +29,7 @@ namespace movies
     public partial class movieWindow : Window
     {
         public ObservableCollection<IReceiver> CastDevices = new ObservableCollection<IReceiver>();
-                        
+                                
         public movieWindow()
         {
             DataContext = this;
@@ -69,14 +69,14 @@ namespace movies
             public static TimeSpan TotalTime = new TimeSpan();
             public static double mbWidth = new double();
             public static double mbHeight = new double();   
-            public static int isFullscreen = 0;
-            
+            public static bool isFullscreen = false;
+                        
         }
        
         
         public void createPlayer()
         {
-            Global.videoPlayer.Open(new Uri(@"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", UriKind.Absolute));//@"C:\Users\stuartfischli\OneDrive - UNSW\PXL_20210429_032802155.mp4" @"https://t.tarahipro.ir/1401/05/thor-web/Thor.Love.and.Thunder.2022.480p.WEB-DL.SoftSub.Filmsara.mkv"
+            Global.videoPlayer.Open(new Uri("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", UriKind.Absolute));//@"C:\Users\stuartfischli\OneDrive - UNSW\PXL_20210429_032802155.mp4" @"https://t.tarahipro.ir/1401/05/thor-web/Thor.Love.and.Thunder.2022.480p.WEB-DL.SoftSub.Filmsara.mkv"
             Global.rect = new Rect(this.Width / 2, this.Height / 2, movieBorder.Width, movieBorder.Height);
             Global.videoDrawing.Rect = Global.rect;
             Global.videoDrawing.Player = Global.videoPlayer;
@@ -89,7 +89,7 @@ namespace movies
             Global.videoPlayer.MediaOpened += new EventHandler(mediaOpened);
             controlsGrid.Margin = new Thickness(0, 500 - 50, 0, 2);
             castBorder.Visibility = Visibility.Hidden;
-
+            
         }
 
         void ticktock(object sender, EventArgs e)
@@ -114,7 +114,7 @@ namespace movies
         }
         void goFullscreen()
         {
-            controlsGrid.Visibility = Visibility.Hidden;
+            //controlsGrid.Visibility = Visibility.Hidden;
             titleGrid.Visibility = Visibility.Hidden;
             backLabel.Visibility = Visibility.Hidden;
             homeImage.Visibility = Visibility.Hidden;
@@ -126,7 +126,8 @@ namespace movies
             movieBorder.Stroke.Opacity = 0;
             Canvas.SetZIndex(playerGrid, 3);
             Canvas.SetZIndex(movieGrid, 0);
-            Canvas.SetZIndex(controlsGrid, 6);
+            Canvas.SetZIndex(controlsGrid, 10);
+            Canvas.SetZIndex(smallPlayButton, 12);
             Canvas.SetZIndex(controlsBorder, 6);
             movieBorder.Fill = Global.drawingBrush;
             playerGrid.HorizontalAlignment = HorizontalAlignment.Center;
@@ -135,12 +136,12 @@ namespace movies
             movieBorder.Width = this.Width;
             movieBorder.Height = Global.mbHeight;
             controlsGrid.Margin = new Thickness(0, Global.mbHeight - 51, 0, 2);
-            playerGrid.VerticalAlignment = VerticalAlignment.Top;
-            playerGrid.Margin = new Thickness(0, (Height - Global.mbHeight), 0, 0);
+            playerGrid.VerticalAlignment = VerticalAlignment.Center;
+            playerGrid.Margin = new Thickness(0, 0, 0, (movieGrid.ActualHeight - ActualHeight) / 2);
 
 
             Global.drawingBrush.Stretch = Stretch.Fill;
-            Global.isFullscreen = 1;
+            Global.isFullscreen = true;
         }
 
         private void fullScreenButton_MouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
@@ -183,14 +184,15 @@ namespace movies
             Canvas.SetZIndex(smallPlayButton, 8);
             Canvas.SetZIndex(slider, 8);
             Canvas.SetZIndex(fullScreenButton, 8);
-            Global.isFullscreen = 0;
+            Canvas.SetZIndex(castButton, 8);
+            Global.isFullscreen = false;
             controlsGrid.Margin = new Thickness(0, (ActualHeight / 2) + 250 - 51, 0, 0);
             titleGrid.Visibility = Visibility.Visible;
             backLabel.Visibility = Visibility.Visible;
             homeImage.Visibility = Visibility.Visible;
             playerGrid.HorizontalAlignment = HorizontalAlignment.Center;
             playerGrid.VerticalAlignment = VerticalAlignment.Center;
-            playerGrid.Margin = new Thickness(0, (ActualHeight - movieBorder.ActualHeight) / 2 - .25 * ActualHeight, 0, 0); 
+            playerGrid.Margin = new Thickness(0, -430, 0, 0); 
             titleGrid.Margin = new Thickness(0, 765, 0, 0);
             scrollViewer.IsEnabled = true;
         }
@@ -239,7 +241,7 @@ namespace movies
             controlsGrid.Visibility = Visibility.Visible;
         }
 
-        private void playerGrid_MouseLeave(object sender, MouseEventArgs e)
+        private void movieBorder_MouseLeave(object sender, MouseEventArgs e)
         {
             playButton.Visibility = Visibility.Hidden;
             controlsGrid.Visibility = Visibility.Hidden;
@@ -247,12 +249,11 @@ namespace movies
 
         private void playerGrid_MouseMove(object sender, MouseEventArgs e)
         {
-            if (Global.isFullscreen == 1)
+            if (Global.isFullscreen == true)
             {
-                Canvas.SetZIndex(controlsGrid, 6);
-                Canvas.SetZIndex(controlsBorder, 10);
                 controlsGrid.Visibility = Visibility.Visible;
-
+                Canvas.SetZIndex(controlsGrid, 10);
+                
                 if (controlsGrid.IsMouseOver)
                 {
                     controlsBorder.Visibility = Visibility.Visible;
@@ -334,12 +335,17 @@ namespace movies
         {
             castBorder.Visibility = Visibility.Visible;
             chromecastList.Visibility = Visibility.Visible;
-                        
+                                    
         }
 
         private async void chromecastList_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            
+            castBorder.Visibility = Visibility.Hidden;
+            if (Global.isPlaying == true)
+            {
+                Global.videoPlayer.Pause();
+                Global.isPlaying = false;
+            }
             int selected = chromecastList.SelectedIndex;
             var caster = new Sender();
             await caster.ConnectAsync(CastDevices[selected]);
@@ -349,7 +355,14 @@ namespace movies
             _ = await mediaChannel.LoadAsync(
                 new MediaInformation() { ContentId = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" });
 
-            castBorder.Visibility = Visibility.Hidden;
+            
         }
+
+        private void playerWindow_Closed(object sender, EventArgs e)
+        {
+            Global.videoPlayer.Stop();
+        }
+
+        
     }
 }
