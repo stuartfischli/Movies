@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Scax" Height="695" Width="1042" SnapsToDevicePixels="True">
+        Title="Scax" Height="695" Width="1042" SnapsToDevicePixels="True" Loaded="Window_Loaded">
     
         <Grid Background="#FF383838" Height="Auto" Width="Auto" Margin="-250,0,-252,-302">
             <Grid.ColumnDefinitions>

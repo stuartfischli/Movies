@@ -82,18 +82,18 @@
     </Window.Resources>
     <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="0,0,0,-52" Foreground="{x:Null}" Background="#FF231F20">
         <Grid x:Name="movieGrid" Background="#FF231F20" Margin="-210,-59,-210,-74" Height="1340" Width="1920">
-            <Grid x:Name="playerGrid" HorizontalAlignment="Center" Height="500" VerticalAlignment="Top" Width="800" MouseEnter="playerGrid_MouseEnter" MouseMove="playerGrid_MouseMove" Margin="0,200,0,0">
+            <Grid x:Name="playerGrid" HorizontalAlignment="Center" Height="500" VerticalAlignment="Top" Width="800" Margin="0,200,0,0">
 
 
-                <Rectangle x:Name="movieBorder" HorizontalAlignment="Center" Height="500" Stroke="#FFE92E1B" VerticalAlignment="Center" Width="800" Fill="Black" RadiusX="10" RadiusY="10" MouseLeave="movieBorder_MouseLeave"/>
-                <Grid x:Name="controlsGrid" HorizontalAlignment="Center" Height="47" Margin="0,443,0,0" VerticalAlignment="Top" Width="780">
+                <Rectangle x:Name="movieBorder" HorizontalAlignment="Center" Height="500" Stroke="#FFE92E1B" VerticalAlignment="Center" Width="800" Fill="Black" RadiusX="10" RadiusY="10" MouseLeftButtonUp="movieBorder_MouseLeftButtonUp" MouseMove="movieBorder_MouseMove"/>
+                <Grid x:Name="controlsGrid" HorizontalAlignment="Center" Height="47" Margin="0,443,0,0" VerticalAlignment="Top" Width="780" MouseEnter="controlsGrid_MouseEnter">
                     <Border x:Name="controlsBorder" BorderThickness="1" HorizontalAlignment="Center" Height="48" VerticalAlignment="Center" Width="780" Background="#FF4E4D4D" Opacity="0.5" CornerRadius="7,7,7,7" Visibility="Visible"/>
-                    <Image x:Name="fullScreenButton" HorizontalAlignment="Left" Height="22" Margin="743,0,0,0" VerticalAlignment="Center" Width="22" Source="/fullScreenButton.png" Cursor="Hand" MouseLeftButtonUp="fullScreenButton_MouseLeftButtonUp_1"/>
-                    <Slider x:Name="slider" Thumb.DragCompleted="slider_DragCompleted" Style="{StaticResource Horizontal_Slider}" HorizontalAlignment="Left" Height="0" VerticalAlignment="Center" Width="658" Foreground="#FFF12612" RenderTransformOrigin="3.053,1.164" IsMoveToPointEnabled="True" MouseLeftButtonUp="slider_MouseLeftButtonUp" TickFrequency="1" IsSnapToTickEnabled="False" Cursor="Hand" Margin="36,0,0,0"/>
                     <Image x:Name="smallPlayButton" HorizontalAlignment="Left" Height="25" Margin="6,0,0,0" VerticalAlignment="Center" Width="25" Source="/smallPlayButton.png"/>
+                    <Image x:Name="fullScreenButton" HorizontalAlignment="Left" Height="22" Margin="743,0,0,0" VerticalAlignment="Center" Width="22" Source="/fullScreenButton.png" Cursor="Hand" MouseLeftButtonUp="fullScreenButton_MouseLeftButtonUp_1"/>
                     <Image x:Name="castButton" HorizontalAlignment="Left" Height="15" Margin="714,0,0,0" VerticalAlignment="Center" Width="20" Source="/chromecast.png" MouseLeftButtonUp="castButton_MouseLeftButtonUp"/>
+                    <Slider x:Name="slider" Thumb.DragCompleted="slider_DragCompleted" Style="{StaticResource Horizontal_Slider}" HorizontalAlignment="Left" Height="0" VerticalAlignment="Center" Width="658" Foreground="#FFF12612" RenderTransformOrigin="3.053,1.164" IsMoveToPointEnabled="True" MouseLeftButtonUp="slider_MouseLeftButtonUp" TickFrequency="1" IsSnapToTickEnabled="False" Cursor="Hand" Margin="36,0,0,0"/>
                 </Grid>
-                <Image x:Name="playButton" Margin="375,225,375,225" Source="/playButton.png" Stretch="Fill" Cursor="Hand" MouseLeftButtonUp="playButton_MouseLeftButtonUp" Width="60" Height="60"/>
+                <Image x:Name="playButton" Margin="375,225,375,225" Source="/playButton.png" Stretch="Fill" Cursor="Hand" MouseLeftButtonUp="playButton_MouseLeftButtonUp" Width="60" Height="60" MouseEnter="playButton_MouseEnter"/>
                 <Border x:Name="castBorder" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="132" VerticalAlignment="Center" Width="199" CornerRadius="10,10,10,10" Background="#FF231F20">
                     <ListView x:Name="chromecastList" HorizontalAlignment="Center" Height="132" VerticalAlignment="Center" Width="199" d:ItemsSource="{d:SampleData ItemCount=2}" HorizontalContentAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontSize="14" ClipToBounds="True" Padding="5,5,5,0" BorderThickness="0,0,0,0" MouseLeftButtonUp="chromecastList_MouseLeftButtonUp">
                         <ListView.ItemContainerStyle>

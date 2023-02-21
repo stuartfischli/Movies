@@ -37,6 +37,7 @@ namespace movies
             createPlayer();
             createTitleBlock();
             this.Title = MainWindow.Global.titles[0].ToString();
+            Global.movieUrl = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
             Init();
                         
         }
@@ -63,6 +64,7 @@ namespace movies
             public static VideoDrawing videoDrawing = new VideoDrawing();
             public static MediaPlayer videoPlayer = new MediaPlayer();
             public static DrawingBrush drawingBrush = new DrawingBrush();
+            public static string movieUrl = "";
             public static bool isPlaying = false;
             public static Rect rect = new Rect();
             public static DispatcherTimer timer = new DispatcherTimer();
@@ -76,7 +78,7 @@ namespace movies
         
         public void createPlayer()
         {
-            Global.videoPlayer.Open(new Uri("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", UriKind.Absolute));//@"C:\Users\stuartfischli\OneDrive - UNSW\PXL_20210429_032802155.mp4" @"https://t.tarahipro.ir/1401/05/thor-web/Thor.Love.and.Thunder.2022.480p.WEB-DL.SoftSub.Filmsara.mkv"
+            Global.videoPlayer.Open(new Uri(Global.movieUrl, UriKind.Absolute));//@"C:\Users\stuartfischli\OneDrive - UNSW\PXL_20210429_032802155.mp4" @"https://t.tarahipro.ir/1401/05/thor-web/Thor.Love.and.Thunder.2022.480p.WEB-DL.SoftSub.Filmsara.mkv"
             Global.rect = new Rect(this.Width / 2, this.Height / 2, movieBorder.Width, movieBorder.Height);
             Global.videoDrawing.Rect = Global.rect;
             Global.videoDrawing.Player = Global.videoPlayer;
@@ -114,7 +116,7 @@ namespace movies
         }
         void goFullscreen()
         {
-            //controlsGrid.Visibility = Visibility.Hidden;
+            controlsGrid.Visibility = Visibility.Visible;
             titleGrid.Visibility = Visibility.Hidden;
             backLabel.Visibility = Visibility.Hidden;
             homeImage.Visibility = Visibility.Hidden;
@@ -126,7 +128,7 @@ namespace movies
             movieBorder.Stroke.Opacity = 0;
             Canvas.SetZIndex(playerGrid, 3);
             Canvas.SetZIndex(movieGrid, 0);
-            Canvas.SetZIndex(controlsGrid, 10);
+            Canvas.SetZIndex(controlsGrid, 15);
             Canvas.SetZIndex(smallPlayButton, 12);
             Canvas.SetZIndex(controlsBorder, 6);
             movieBorder.Fill = Global.drawingBrush;
@@ -180,7 +182,7 @@ namespace movies
             movieBorder.Fill = Global.drawingBrush;
             Canvas.SetZIndex(movieBorder, 4);
             Canvas.SetZIndex(movieGrid, 0);
-            Canvas.SetZIndex(controlsGrid, 7);
+            Canvas.SetZIndex(controlsGrid, 10);
             Canvas.SetZIndex(smallPlayButton, 8);
             Canvas.SetZIndex(slider, 8);
             Canvas.SetZIndex(fullScreenButton, 8);
@@ -201,7 +203,7 @@ namespace movies
         {
             if (e.Key == Key.Escape)
             {
-                exitFullscreen();
+                exitFullscreen();                
             }
 
             else if (e.Key == Key.Space)
@@ -218,14 +220,24 @@ namespace movies
                 }
                 
             }
+            else if (e.Key == Key.F)
+            {
+                if (Global.isFullscreen == false)
+                {
+                    goFullscreen();
+                }
+                else
+                {
+                    exitFullscreen();
+                }
+            }
 
             else
             {
 
             }
         }
-
-                        
+                                
 
        private void slider_DragCompleted(object sender, DragCompletedEventArgs e)
         {
@@ -235,43 +247,26 @@ namespace movies
             }
         }
 
-        private void playerGrid_MouseEnter(object sender, MouseEventArgs e)
+        private void movieBorder_MouseMove(object sender, MouseEventArgs e)
         {
-            playButton.Visibility = Visibility.Visible;
             controlsGrid.Visibility = Visibility.Visible;
-        }
-
-        private void movieBorder_MouseLeave(object sender, MouseEventArgs e)
-        {
-            playButton.Visibility = Visibility.Hidden;
-            controlsGrid.Visibility = Visibility.Hidden;
-        }
-
-        private void playerGrid_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (Global.isFullscreen == true)
+            Canvas.SetZIndex(controlsGrid, 16);
+                        
+            if (controlsGrid.IsMouseOver == false)
             {
-                controlsGrid.Visibility = Visibility.Visible;
-                Canvas.SetZIndex(controlsGrid, 10);
-                
-                if (controlsGrid.IsMouseOver)
+                Task.Delay(2500).ContinueWith(_ =>
                 {
-                    controlsBorder.Visibility = Visibility.Visible;
-                }
-                else
-                {
-                    Task.Delay(2000).ContinueWith(_ =>
+                    this.Dispatcher.Invoke(() =>
                     {
-                        this.Dispatcher.Invoke(() =>
-                        {
-                            controlsGrid.Visibility = Visibility.Hidden;
-                        });
+                        controlsGrid.Visibility = Visibility.Hidden;
                     });
-                }
-
+                });
             }
+            
+            
         }
 
+     
         private void homeImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             this.Close();
@@ -283,10 +278,7 @@ namespace movies
         }
 
         private void Label_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-
-            //Window windowToHide = new movieWindow();
-            //windowToHide.Close();
+        {                        
             this.Close();
             Global.videoPlayer.Stop();
             if (MainWindow.Global.movieNumber <= 10)
@@ -313,13 +305,7 @@ namespace movies
             }
         }
 
-
-        //private void Button_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        //{
-        //    StartCasting();
-        //}
-
-                    
+                            
         async Task Init()
         {
             var chromecasts = (await new DeviceLocator().FindReceiversAsync());
@@ -335,6 +321,8 @@ namespace movies
         {
             castBorder.Visibility = Visibility.Visible;
             chromecastList.Visibility = Visibility.Visible;
+            Canvas.SetZIndex(chromecastList, 10);
+            Canvas.SetZIndex(castBorder, 10);
                                     
         }
 
@@ -361,6 +349,37 @@ namespace movies
         private void playerWindow_Closed(object sender, EventArgs e)
         {
             Global.videoPlayer.Stop();
+        }
+
+        private void controlsGrid_MouseEnter(object sender, MouseEventArgs e)
+        {
+            controlsGrid.Visibility = Visibility.Visible;
+        }
+
+        private void playButton_MouseEnter(object sender, MouseEventArgs e)
+        {
+            playButton.Visibility = Visibility.Visible;
+            controlsGrid.Visibility = Visibility.Visible;
+        }
+
+        private void movieBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (castBorder.Visibility == Visibility.Visible)
+            {
+                castBorder.Visibility = Visibility.Hidden;
+                chromecastList.Visibility = Visibility.Hidden;
+            }
+            else if (Global.isPlaying == true)
+            {
+                Global.videoPlayer.Pause();
+                Global.isPlaying = false;
+            }
+            else if (Global.isPlaying == false)
+            {
+                Global.videoPlayer.Play();
+                Global.isPlaying = true;
+            }
+
         }
 
         
