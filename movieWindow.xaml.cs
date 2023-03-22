@@ -46,7 +46,7 @@ namespace movies
         {
             try
             {
-                titleLabel.Text = MainWindow.Global.titles[MainWindow.Global.movieNumber].ToString();
+                titleLabel.Text = MainWindow.Global.movieList[MainWindow.Global.movieNumber].Title.ToString();
                 ImageBrush tileBrush = new ImageBrush(MainWindow.Global.images[MainWindow.Global.movieNumber]);
                 coverImage.Background = tileBrush;
                 metadataBlock.Text = MainWindow.Global.descriptions[MainWindow.Global.movieNumber].ToString();
@@ -72,25 +72,46 @@ namespace movies
             public static double mbWidth = new double();
             public static double mbHeight = new double();   
             public static bool isFullscreen = false;
-                        
+                                    
         }
        
         
         public void createPlayer()
         {
-            Global.videoPlayer.Open(new Uri(Global.movieUrl, UriKind.Absolute));//@"C:\Users\stuartfischli\OneDrive - UNSW\PXL_20210429_032802155.mp4" @"https://t.tarahipro.ir/1401/05/thor-web/Thor.Love.and.Thunder.2022.480p.WEB-DL.SoftSub.Filmsara.mkv"
-            Global.rect = new Rect(this.Width / 2, this.Height / 2, movieBorder.Width, movieBorder.Height);
-            Global.videoDrawing.Rect = Global.rect;
-            Global.videoDrawing.Player = Global.videoPlayer;
-            Global.drawingBrush = new DrawingBrush(Global.videoDrawing);
-            movieBorder.Fill = Global.drawingBrush;
-            controlsGrid.Visibility = Visibility.Hidden;
-            Global.drawingBrush.Stretch = Stretch.Fill;
-            Global.timer.Interval = TimeSpan.FromSeconds(.1);
-            Global.timer.Tick += new EventHandler(ticktock);
-            Global.videoPlayer.MediaOpened += new EventHandler(mediaOpened);
-            controlsGrid.Margin = new Thickness(0, 500 - 50, 0, 2);
-            castBorder.Visibility = Visibility.Hidden;
+            try
+            {
+
+                if (MainWindow.Global.movieList[MainWindow.Global.movieNumber].hdUrl != null)
+                {
+                    Global.movieUrl = MainWindow.Global.movieList[MainWindow.Global.movieNumber].hdUrl;
+                }
+                else if (MainWindow.Global.movieList[MainWindow.Global.movieNumber].sdUrl != null)
+                {
+                    Global.movieUrl = MainWindow.Global.movieList[MainWindow.Global.movieNumber].sdUrl;
+                }
+                else
+                {
+                    MessageBox.Show("Movie not found");
+                }
+                Global.movieUrl = MainWindow.Global.movieList[MainWindow.Global.movieNumber].sdUrl;
+                Global.videoPlayer.Open(new Uri(Global.movieUrl, UriKind.Absolute));//@"C:\Users\stuartfischli\OneDrive - UNSW\PXL_20210429_032802155.mp4" @"https://t.tarahipro.ir/1401/05/thor-web/Thor.Love.and.Thunder.2022.480p.WEB-DL.SoftSub.Filmsara.mkv"
+                Global.rect = new Rect(this.Width / 2, this.Height / 2, movieBorder.Width, movieBorder.Height);
+                Global.videoDrawing.Rect = Global.rect;
+                Global.videoDrawing.Player = Global.videoPlayer;
+                Global.drawingBrush = new DrawingBrush(Global.videoDrawing);
+                movieBorder.Fill = Global.drawingBrush;
+                controlsGrid.Visibility = Visibility.Hidden;
+                Global.drawingBrush.Stretch = Stretch.Fill;
+                Global.timer.Interval = TimeSpan.FromSeconds(.1);
+                Global.timer.Tick += new EventHandler(ticktock);
+                Global.videoPlayer.MediaOpened += new EventHandler(mediaOpened);
+                controlsGrid.Margin = new Thickness(0, 500 - 50, 0, 2);
+                castBorder.Visibility = Visibility.Hidden;
+            }
+            catch
+            {
+
+            }
             
         }
 

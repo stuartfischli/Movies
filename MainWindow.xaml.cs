@@ -99,7 +99,7 @@ namespace WpfApp1
 
                         foreach (var j in cards[i].SelectNodes("//a[@href]"))
                         {
-                            if (j.Attributes["href"].Value.EndsWith(".mkv"))
+                            if (j.Attributes["href"].Value.EndsWith(".mkv") || j.Attributes["href"].Value.EndsWith(".mp4"))
                             {
                                 urls[i].Add(j.GetAttributeValue("href", ""));
                             }
