@@ -389,6 +389,8 @@ namespace movies
             {
                 castBorder.Visibility = Visibility.Hidden;
                 chromecastList.Visibility = Visibility.Hidden;
+                Init();
+                CastDevices.Clear();
             }
             else if (Global.isPlaying == true)
             {

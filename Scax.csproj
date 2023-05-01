@@ -13,6 +13,7 @@
     <None Remove="fullScreenButton.png" />
     <None Remove="Logo.jpg" />
     <None Remove="NdTLIY.jpg" />
+    <None Remove="Picture1.png" />
     <None Remove="playButton.png" />
     <None Remove="smallPlayButton.png" />
   </ItemGroup>
@@ -32,6 +33,7 @@
     <Resource Include="fullScreenButton.png" />
     <Content Include="Logo.jpg" />
     <Resource Include="NdTLIY.jpg" />
+    <Resource Include="Picture1.png" />
     <Resource Include="playButton.png" />
     <Resource Include="smallPlayButton.png" />
   </ItemGroup>
