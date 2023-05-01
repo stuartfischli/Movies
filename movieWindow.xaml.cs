@@ -37,7 +37,6 @@ namespace movies
             createPlayer();
             createTitleBlock();
             this.Title = MainWindow.Global.titles[0].ToString();
-            Global.movieUrl = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
             Init();
                         
         }
@@ -92,6 +91,7 @@ namespace movies
                 else
                 {
                     MessageBox.Show("Movie not found");
+                    Global.movieUrl = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
                 }
                 Global.movieUrl = MainWindow.Global.movieList[MainWindow.Global.movieNumber].sdUrl;
                 Global.videoPlayer.Open(new Uri(Global.movieUrl, UriKind.Absolute));//@"C:\Users\stuartfischli\OneDrive - UNSW\PXL_20210429_032802155.mp4" @"https://t.tarahipro.ir/1401/05/thor-web/Thor.Love.and.Thunder.2022.480p.WEB-DL.SoftSub.Filmsara.mkv"
