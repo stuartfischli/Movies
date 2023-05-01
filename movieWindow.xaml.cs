@@ -362,7 +362,7 @@ namespace movies
             await caster.LaunchAsync(mediaChannel);
             // Load and play Big Buck Bunny video
             _ = await mediaChannel.LoadAsync(
-                new MediaInformation() { ContentId = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" });
+                new MediaInformation() { ContentId = Global.movieUrl });
 
             
         }

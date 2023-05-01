@@ -135,13 +135,13 @@
       <dsig:DigestValue>k8uEUCW+gp+OVX4iAmF18seETWbjsu40EVn5N2AMj2k=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Scax.dll" size="1768960">
+  <file name="Scax.dll" size="1841152">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>eOkSThdlXyBaXYP1duDTjcHZk4IdCQLxbsu7mQR2JwU=</dsig:DigestValue>
+      <dsig:DigestValue>n23cRiqLBXthke+1gVAuhTy9vQkf6GZeFKCapfc2+8k=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Scax.exe" size="260608">
@@ -150,7 +150,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>1tGAuC7r8RIv8R1zFNNVtFWV6HKID1VLeYoJ2Svs2Yg=</dsig:DigestValue>
+      <dsig:DigestValue>u9Lb9ozaTL7EubxRUs4/gtNf/2exv6HGkEXMf6Hn4ds=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Scax.runtimeconfig.json" size="372">
